@@ -5,8 +5,30 @@
 <title>Diaa AI Pro</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;700&display=swap" rel="stylesheet">
-
+  
 <style>
+  .slider{
+  overflow:hidden;
+  position:relative;
+}
+
+.slider-track{
+  display:flex;
+  gap:20px;
+  animation:slide 20s linear infinite;
+}
+
+.slider-track .card{
+  min-width:260px;
+  text-align:center;
+  background:#020617;
+  border-radius:15px;
+}
+
+@keyframes slide{
+  from{transform:translateX(0)}
+  to{transform:translateX(-50%)}
+}
 *{box-sizing:border-box}
 body{
 margin:0;
@@ -171,12 +193,54 @@ animation:pulse 1.5s infinite
 </section>
 
 <section class="section">
-<h2>آراء العملاء</h2>
-<div class="testimonials">
-<div class="card">⭐⭐⭐⭐⭐<br>خدمة ممتازة وسرعة تنفيذ</div>
-<div class="card">⭐⭐⭐⭐⭐<br>احترافية وثقة</div>
-<div class="card">⭐⭐⭐⭐⭐<br>أفضل تعامل حصل</div>
-</div>
+  <h2>آراء العملاء</h2>
+
+  <div class="slider">
+    <div class="slider-track">
+
+      <div class="card">
+        ⭐⭐⭐⭐⭐
+        <p>خدمة ممتازة وسرعة تنفيذ</p>
+      </div>
+
+      <div class="card">
+        ⭐⭐⭐⭐⭐
+        <p>احترافية وثقة في التعامل</p>
+      </div>
+
+      <div class="card">
+        ⭐⭐⭐⭐⭐
+        <p>أفضل تجربة سوشيال ميديا</p>
+      </div>
+
+      <div class="card">
+        ⭐⭐⭐⭐⭐
+        <p>دعم سريع ونتائج قوية</p>
+      </div>
+
+      <!-- تكرار علشان الحركة تكون مستمرة -->
+      <div class="card">
+        ⭐⭐⭐⭐⭐
+        <p>خدمة ممتازة وسرعة تنفيذ</p>
+      </div>
+
+      <div class="card">
+        ⭐⭐⭐⭐⭐
+        <p>احترافية وثقة في التعامل</p>
+      </div>
+
+      <div class="card">
+        ⭐⭐⭐⭐⭐
+        <p>أفضل تجربة سوشيال ميديا</p>
+      </div>
+
+      <div class="card">
+        ⭐⭐⭐⭐⭐
+        <p>دعم سريع ونتائج قوية</p>
+      </div>
+
+    </div>
+  </div>
 </section>
 
 <section class="section" id="contact">
