@@ -179,7 +179,6 @@ width:58px;
 margin-bottom:10px;
 filter:drop-shadow(0 0 12px var(--accent));
 }
-
 .service a{
 display:block;
 margin-top:10px;
@@ -187,7 +186,17 @@ color:var(--accent);
 font-size:12px;
 text-decoration:none;
 }
+@media (max-width: 768px){
+  .service{
+    min-width:160px;
+    min-height:220px;
+    padding:14px;
+  }
 
+  .service img{
+    width:48px;
+  }
+  }
 /* TESTIMONIALS */
 .testimonials{
 display:flex;
