@@ -4,7 +4,6 @@
 <meta charset="UTF-8">
 <title>Diaa AI Pro</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="Diaa AI Pro - شركة ذكاء اصطناعي، سوشيال ميديا، أمن سيبراني، حلول رقمية عالمية">
 <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;500;700&display=swap" rel="stylesheet">
 
 <style>
@@ -25,7 +24,7 @@ color:var(--text);
 overflow-x:hidden;
 }
 
-/* ===== NAV ===== */
+/* NAV */
 nav{
 position:fixed;
 top:0;
@@ -33,7 +32,7 @@ width:100%;
 display:flex;
 justify-content:space-between;
 align-items:center;
-padding:12px 20px;
+padding:10px 18px;
 background:rgba(5,7,15,.75);
 backdrop-filter:blur(12px);
 z-index:1000;
@@ -41,68 +40,67 @@ z-index:1000;
 
 .logo{
 font-weight:700;
-letter-spacing:2px;
+letter-spacing:3px;
 color:var(--accent);
-animation:glow 3s infinite;
+animation:logoGlow 3s infinite;
+font-size:15px;
 }
 
-@keyframes glow{
-0%,100%{opacity:.3;text-shadow:none}
-50%{opacity:1;text-shadow:0 0 20px var(--accent)}
+@keyframes logoGlow{
+0%,100%{opacity:.4;text-shadow:none}
+50%{opacity:1;text-shadow:0 0 25px var(--accent)}
 }
 
 nav a{
 color:#cbd5ff;
 text-decoration:none;
-margin:0 8px;
-font-size:14px;
+margin:0 6px;
+font-size:11px;
 }
 
-/* ===== HERO ===== */
+/* HERO */
 .hero{
-padding-top:120px;
-padding-bottom:60px;
+padding-top:110px;
 text-align:center;
 }
 
-.marquee{
+/* 3D MARQUEE */
+.marquee3d{
 overflow:hidden;
 white-space:nowrap;
-font-size:14px;
-opacity:.9;
-color:#9fefff;
+font-size:12px;
+perspective:800px;
 }
 
-.marquee span{
+.marquee3d span{
 display:inline-block;
 padding-left:100%;
-animation:scroll 18s linear infinite;
+transform:rotateX(18deg);
+text-shadow:0 0 12px rgba(0,234,255,.6);
 }
 
-@keyframes scroll{
-from{transform:translateX(0)}
-to{transform:translateX(-100%)}
+.marquee-right span{
+animation:scrollRight 26s linear infinite;
 }
 
-/* ===== ABOUT STRIP ===== */
-.about-strip{
-margin:40px 0;
-background:linear-gradient(90deg,transparent,rgba(0,234,255,.15),transparent);
-padding:15px;
-font-size:14px;
-white-space:nowrap;
-overflow:hidden;
+.marquee-left span{
+animation:scrollLeft 26s linear infinite;
+opacity:.7;
 }
 
-.about-strip span{
-display:inline-block;
-padding-left:100%;
-animation:scroll 20s linear infinite;
+@keyframes scrollRight{
+from{transform:translateX(0) rotateX(18deg)}
+to{transform:translateX(-100%) rotateX(18deg)}
 }
 
-/* ===== SERVICES ===== */
-.section{padding:40px 0}
-.section h2{text-align:center;color:var(--accent);margin-bottom:20px}
+@keyframes scrollLeft{
+from{transform:translateX(-100%) rotateX(18deg)}
+to{transform:translateX(0) rotateX(18deg)}
+}
+
+/* SERVICES */
+.section{padding:45px 0}
+.section h2{text-align:center;color:var(--accent);margin-bottom:18px}
 
 .services-row{
 display:flex;
@@ -118,33 +116,33 @@ scroll-snap-type:x mandatory;
 min-width:160px;
 background:linear-gradient(145deg,#0f1530,#090e20);
 border-radius:18px;
-padding:20px;
+padding:18px;
 text-align:center;
 scroll-snap-align:center;
-transition:.4s;
+transition:.5s;
 box-shadow:0 10px 30px rgba(0,0,0,.6);
 }
 
 .service:hover{
-transform:translateY(-10px) rotateY(8deg);
-box-shadow:0 0 25px var(--accent);
+transform:translateY(-10px) rotateY(10deg);
+box-shadow:0 0 30px var(--accent);
 }
 
 .service img{
-width:60px;
+width:58px;
 margin-bottom:10px;
-filter:drop-shadow(0 0 10px var(--accent));
+filter:drop-shadow(0 0 12px var(--accent));
 }
 
 .service a{
 display:block;
 margin-top:10px;
 color:var(--accent);
-font-size:13px;
+font-size:12px;
 text-decoration:none;
 }
 
-/* ===== TESTIMONIALS ===== */
+/* TESTIMONIALS */
 .testimonials{
 display:flex;
 gap:16px;
@@ -157,17 +155,28 @@ scroll-snap-type:x mandatory;
 min-width:220px;
 background:var(--card);
 border-radius:16px;
-padding:20px;
+padding:18px;
 scroll-snap-align:center;
 }
 
-/* ===== CHAT ===== */
-.chat-btn,.fb-btn{
+/* ABOUT */
+.about{
+max-width:850px;
+margin:auto;
+padding:30px 20px;
+text-align:center;
+font-size:14px;
+line-height:1.9;
+opacity:.9;
+}
+
+/* BUTTONS */
+.fb-btn,.chat-btn{
 position:fixed;
 bottom:20px;
 padding:12px 16px;
 border-radius:30px;
-font-size:14px;
+font-size:13px;
 color:#fff;
 text-decoration:none;
 z-index:999;
@@ -183,6 +192,7 @@ right:20px;
 background:linear-gradient(135deg,var(--accent),var(--accent2));
 }
 
+/* CHAT */
 .chat-box{
 position:fixed;
 bottom:80px;
@@ -192,6 +202,7 @@ background:#0b1020;
 border-radius:16px;
 padding:12px;
 display:none;
+font-size:13px;
 }
 
 .chat-box input{
@@ -202,7 +213,7 @@ border-radius:8px;
 margin-top:8px;
 }
 
-/* ===== FOOTER ===== */
+/* FOOTER */
 footer{
 text-align:center;
 padding:20px;
@@ -215,7 +226,7 @@ opacity:.6;
 <body>
 
 <nav>
-<div class="logo">DIAA•AI•PRO</div>
+<div class="logo">DIAA AI PRO</div>
 <div>
 <a href="#services">خدماتنا</a>
 <a href="#reviews">آراء العملاء</a>
@@ -224,13 +235,12 @@ opacity:.6;
 </nav>
 
 <div class="hero">
-<div class="marquee">
+<div class="marquee3d marquee-right">
 <span>ذكاء اصطناعي • سوشيال ميديا • أمن سيبراني • تصميم مواقع • حلول رقمية عالمية</span>
 </div>
+<div class="marquee3d marquee-left">
+<span>AI Solutions • Cyber Security • Social Media • Web & App Development</span>
 </div>
-
-<div class="about-strip">
-<span>أنا ضياء محسن — أقدّم حلول ذكاء اصطناعي وسوشيال ميديا متقدمة لمساعدتك على النمو الرقمي عالميًا</span>
 </div>
 
 <section class="section" id="services">
@@ -247,26 +257,31 @@ opacity:.6;
 <div class="service"><img src="https://cdn-icons-png.flaticon.com/512/3064/3064197.png"><div>أمن سيبراني</div><a href="https://www.facebook.com/diaa.coom">طلب الخدمة</a></div>
 <div class="service"><img src="https://cdn-icons-png.flaticon.com/512/1006/1006363.png"><div>استرجاع هاتف</div><a href="https://www.facebook.com/diaa.coom">طلب الخدمة</a></div>
 <div class="service"><img src="https://cdn-icons-png.flaticon.com/512/919/919851.png"><div>إنشاء تطبيقات</div><a href="https://www.facebook.com/diaa.coom">طلب الخدمة</a></div>
-<div class="service"><img src="https://cdn-icons-png.flaticon.com/512/919/919854.png"><div>رصيد فودافون / اتصالات</div><a href="https://www.facebook.com/diaa.coom">طلب الخدمة</a></div>
 </div>
 </section>
 
 <section class="section" id="reviews">
 <h2>آراء العملاء</h2>
 <div class="testimonials">
-<div class="card">⭐⭐⭐⭐⭐<br>احترافية عالية جدًا</div>
-<div class="card">⭐⭐⭐⭐⭐<br>أفضل تعامل</div>
+<div class="card">⭐⭐⭐⭐⭐<br>احترافية عالية</div>
+<div class="card">⭐⭐⭐⭐⭐<br>شركة موثوقة</div>
 <div class="card">⭐⭐⭐⭐⭐<br>نتائج قوية</div>
-<div class="card">⭐⭐⭐⭐⭐<br>شركة عالمية</div>
-<div class="card">⭐⭐⭐⭐⭐<br>دعم سريع</div>
+<div class="card">⭐⭐⭐⭐⭐<br>دعم ممتاز</div>
+<div class="card">⭐⭐⭐⭐⭐<br>أفضل تجربة</div>
 </div>
+</section>
+
+<section class="about">
+مرحباً، أنا ضياء محسن.<br><br>
+قد تراني أكتب سطوراً من الأكواد المعقدة لبناء موقع أحلامك، وفي اللحظة التالية أخطط لحملة تسويقية إبداعية تضج بها منصات التواصل الاجتماعي.<br><br>
+أنا أؤمن بأن البرمجة هي الهيكل، والتسويق هو الروح. وبدمج الاثنين معاً، أقدم لك تجربة رقمية متكاملة تضمن لك التميز عن المنافسين. دعنا نصنع شيئاً استثنائياً معاً!
 </section>
 
 <a class="fb-btn" href="https://www.facebook.com/diaa.coom" target="_blank">Facebook</a>
 <a class="chat-btn" onclick="toggleChat()">Chat</a>
 
 <div class="chat-box" id="chat">
-<div>لحل المشكلة أسرع، اتصل على المسؤول مباشرة<br><strong>01021292994</strong></div>
+لحل المشكلة أسرع، اتصل على المسؤول مباشرة<br><strong>01021292994</strong>
 <input placeholder="اكتب رسالتك هنا">
 </div>
 
@@ -276,8 +291,8 @@ opacity:.6;
 
 <script>
 function toggleChat(){
-document.getElementById('chat').style.display =
-document.getElementById('chat').style.display === 'block' ? 'none' : 'block';
+const c=document.getElementById('chat');
+c.style.display=c.style.display==='block'?'none':'block';
 }
 </script>
 
