@@ -111,7 +111,52 @@ scroll-snap-type:x mandatory;
 }
 
 .services-row.reverse{direction:ltr}
+/* AUTO MOVE SERVICES */
+.services-row.auto-move{
+  animation: autoScroll 30s linear infinite;
+}
 
+.services-row.reverse.auto-move{
+  animation-direction: reverse;
+}
+
+@keyframes autoScroll{
+  from{transform:translateX(0)}
+  to{transform:translateX(-50%)}
+}
+
+/* ADVANCED 3D HOVER EFFECT */
+.service{
+  position:relative;
+  transform-style:preserve-3d;
+}
+
+.service::after{
+  content:'';
+  position:absolute;
+  inset:0;
+  border-radius:18px;
+  background:linear-gradient(
+    120deg,
+    transparent 20%,
+    rgba(0,234,255,.15),
+    transparent 80%
+  );
+  opacity:0;
+  transition:.5s;
+}
+
+.service:hover::after{
+  opacity:1;
+}
+
+.service:hover{
+  transform:
+    translateY(-12px)
+    rotateX(8deg)
+    rotateY(-12deg)
+    scale(1.05);
+}
 .service{
 min-width:160px;
 background:linear-gradient(145deg,#0f1530,#090e20);
@@ -336,6 +381,65 @@ opacity:.6;
 <div class="service"><img src="https://cdn-icons-png.flaticon.com/512/1006/1006363.png"><div>استرجاع هاتف</div><a href="https://www.facebook.com/diaa.coom">طلب الخدمة</a></div>
 <div class="service"><img src="https://cdn-icons-png.flaticon.com/512/919/919851.png"><div>إنشاء تطبيقات</div><a href="https://www.facebook.com/diaa.coom">طلب الخدمة</a></div>
 </div>
+  <!-- SERVICES NEW ROW 3 -->
+<div class="services-row auto-move">
+  <div class="service">
+    <img src="https://cdn-icons-png.flaticon.com/512/5968/5968764.png">
+    <div>إدارة سوشيال ميديا</div>
+    <a href="https://www.facebook.com/diaa.coom" target="_blank">طلب الخدمة</a>
+  </div>
+
+  <div class="service">
+    <img src="https://cdn-icons-png.flaticon.com/512/4712/4712109.png">
+    <div>حلول ذكاء اصطناعي</div>
+    <a href="https://www.facebook.com/diaa.coom" target="_blank">طلب الخدمة</a>
+  </div>
+
+  <div class="service">
+    <img src="https://cdn-icons-png.flaticon.com/512/919/919851.png">
+    <div>برمجة مواقع</div>
+    <a href="https://www.facebook.com/diaa.coom" target="_blank">طلب الخدمة</a>
+  </div>
+
+  <div class="service">
+    <img src="https://cdn-icons-png.flaticon.com/512/3064/3064197.png">
+    <div>أمن سيبراني</div>
+    <a href="https://www.facebook.com/diaa.coom" target="_blank">طلب الخدمة</a>
+  </div>
+
+  <div class="service">
+    <img src="https://cdn-icons-png.flaticon.com/512/1006/1006363.png">
+    <div>تصميم واجهات UI/UX</div>
+    <a href="https://www.facebook.com/diaa.coom" target="_blank">طلب الخدمة</a>
+  </div>
+</div>
+
+<!-- SERVICES NEW ROW 4 (عكس الاتجاه) -->
+<div class="services-row reverse auto-move">
+  <div class="service">
+    <img src="https://cdn-icons-png.flaticon.com/512/3669/3669981.png">
+    <div>إعلانات ممولة</div>
+    <a href="https://www.facebook.com/diaa.coom" target="_blank">طلب الخدمة</a>
+  </div>
+
+  <div class="service">
+    <img src="https://cdn-icons-png.flaticon.com/512/2920/2920329.png">
+    <div>تحليل بيانات</div>
+    <a href="https://www.facebook.com/diaa.coom" target="_blank">طلب الخدمة</a>
+  </div>
+
+  <div class="service">
+    <img src="https://cdn-icons-png.flaticon.com/512/2972/2972550.png">
+    <div>تحليل منافسين</div>
+    <a href="https://www.facebook.com/diaa.coom" target="_blank">طلب الخدمة</a>
+  </div>
+
+  <div class="service">
+    <img src="https://cdn-icons-png.flaticon.com/512/3669/3669723.png">
+    <div>تصميم محتوى</div>
+    <a href="https://www.facebook.com/diaa.coom" target="_blank">طلب الخدمة</a>
+  </div>
+</div>
 </section>
 
 <section class="section" id="reviews">
@@ -427,7 +531,23 @@ q.onclick=()=>{
 q.parentElement.classList.toggle('active');
 };
 });
+  
+document.querySelectorAll('.auto-move').forEach(row=>{
+  let dir = row.classList.contains('reverse') ? -1 : 1;
+  let scrollAmount = 0;
+
+  setInterval(()=>{
+    row.scrollLeft += dir;
+    scrollAmount += Math.abs(dir);
+
+    if(scrollAmount > 400){
+      dir *= -1;
+      scrollAmount = 0;
+    }
+  },40);
+});
 </script>
+
 
 </body>
 </html>
