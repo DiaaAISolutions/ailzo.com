@@ -4,317 +4,306 @@
 <meta charset="UTF-8">
 <title>Diaa AI Pro</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!-- SEO -->
+<meta name="description" content="Diaa AI Pro شركة ذكاء اصطناعي – سوشيال ميديا – أمن سيبراني – تصميم مواقع وتطبيقات">
+<meta name="keywords" content="ذكاء اصطناعي, سوشيال ميديا, تصميم مواقع, أمن سيبراني">
+
 <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;700&display=swap" rel="stylesheet">
 
 <style>
-*{box-sizing:border-box}
-body{
-margin:0;
-font-family:'Cairo',sans-serif;
-background:#0b0f1a;
-color:#fff;
-overflow-x:hidden
+:root{
+  --bg:#05060f;
+  --card:#0b1020;
+  --main:#00eaff;
+  --text:#e5e7eb;
+  --accent:#7c3aed;
 }
 
-/* ===== NAVBAR ===== */
+*{box-sizing:border-box}
+body{
+  margin:0;
+  font-family:'Cairo',sans-serif;
+  background:radial-gradient(circle at top,#0b1c2d,#05060f);
+  color:var(--text);
+}
+
+/* ===== NAV ===== */
 nav{
-position:fixed;
-top:0;
-width:100%;
-background:rgba(0,0,0,.6);
-backdrop-filter:blur(12px);
-display:flex;
-justify-content:space-between;
-align-items:center;
-padding:10px 30px;
-z-index:1000
+  position:fixed;
+  top:0;
+  width:100%;
+  padding:10px 20px;
+  background:rgba(5,6,15,.75);
+  backdrop-filter:blur(12px);
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  z-index:999;
 }
 
 .logo{
-font-size:20px;
-font-weight:700;
-color:#00eaff;
-text-shadow:0 0 15px rgba(0,234,255,.6)
+  font-weight:700;
+  color:var(--main);
+  font-size:18px;
+  letter-spacing:1px;
 }
 
 nav a{
-color:#ccc;
-text-decoration:none;
-margin:0 8px;
-font-size:14px;
-transition:.3s
+  color:#cbd5f5;
+  text-decoration:none;
+  font-size:13px;
+  margin:0 6px;
 }
-nav a:hover{color:#00eaff}
+
+nav a:hover{color:var(--main)}
 
 /* ===== HERO ===== */
 .hero{
-height:100vh;
-display:flex;
-justify-content:center;
-align-items:center;
-flex-direction:column;
-text-align:center;
-padding-top:60px
+  padding-top:90px;
+  min-height:100vh;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
 }
 
-.hero-slider{
-font-size:22px;
-color:#00eaff;
-animation:slideText 10s linear infinite;
-white-space:nowrap;
-text-shadow:0 0 20px rgba(0,234,255,.5)
+.hero h1{
+  font-size:34px;
+  color:var(--main);
 }
 
-@keyframes slideText{
-0%{transform:translateX(100%)}
-100%{transform:translateX(-100%)}
+.ticker{
+  margin-top:15px;
+  width:100%;
+  overflow:hidden;
 }
 
-/* ===== SECTION ===== */
+.ticker span{
+  display:inline-block;
+  padding-left:100%;
+  animation:move 20s linear infinite;
+  color:#a5f3fc;
+  font-size:15px;
+}
+
+@keyframes move{
+  from{transform:translateX(0)}
+  to{transform:translateX(-100%)}
+}
+
+/* ===== SECTIONS ===== */
 .section{
-padding:80px 20px;
-max-width:1200px;
-margin:auto
+  padding:80px 16px;
 }
 
 .section h2{
-text-align:center;
-color:#00eaff;
-margin-bottom:40px;
-font-size:22px
+  text-align:center;
+  font-size:20px;
+  color:var(--main);
+  margin-bottom:25px;
 }
 
-/* ===== SERVICES SLIDER ===== */
+/* ===== SERVICES ===== */
 .services-wrapper{
-overflow:hidden;
-margin-bottom:40px
+  overflow:hidden;
 }
 
-.services-track{
-display:flex;
-gap:25px;
-animation:services 25s linear infinite
+.services-row{
+  display:flex;
+  gap:14px;
+  animation:scroll 15s linear infinite;
 }
 
-@keyframes services{
-from{transform:translateX(0)}
-to{transform:translateX(-50%)}
+.services-row.fast{
+  animation-duration:10s;
 }
 
 .service{
-min-width:260px;
-background:#111827;
-border-radius:20px;
-padding:25px;
-text-align:center;
-box-shadow:0 15px 30px rgba(0,0,0,.4);
-transition:.4s;
-transform-style:preserve-3d
-}
-
-.service:hover{
-transform:rotateY(12deg) rotateX(6deg)
+  min-width:220px;
+  background:linear-gradient(145deg,#0b1020,#070b16);
+  border-radius:18px;
+  padding:20px;
+  text-align:center;
+  box-shadow:0 10px 40px rgba(0,234,255,.15);
 }
 
 .service img{
-width:90px;
-margin-bottom:15px;
-animation:float 3s ease-in-out infinite
+  width:80px;
+  animation:float 3s ease-in-out infinite;
 }
 
 @keyframes float{
-0%,100%{transform:translateY(0)}
-50%{transform:translateY(-10px)}
+  0%,100%{transform:translateY(0)}
+  50%{transform:translateY(-6px)}
 }
 
-.service h3{font-size:16px;margin:10px 0}
+.service h3{
+  font-size:14px;
+  margin:12px 0;
+}
 
 .service a{
-display:inline-block;
-margin-top:10px;
-padding:8px 16px;
-border-radius:20px;
-background:#00eaff;
-color:#000;
-text-decoration:none;
-font-size:13px
+  display:inline-block;
+  margin-top:10px;
+  padding:8px 14px;
+  background:var(--main);
+  color:#000;
+  border-radius:20px;
+  text-decoration:none;
+  font-size:12px;
+}
+
+@keyframes scroll{
+  from{transform:translateX(0)}
+  to{transform:translateX(-50%)}
 }
 
 /* ===== TESTIMONIALS ===== */
 .testimonials{
-display:flex;
-gap:20px;
-overflow-x:auto;
-scroll-snap-type:x mandatory
+  display:flex;
+  gap:14px;
+  overflow-x:auto;
+  scroll-snap-type:x mandatory;
 }
 
-.testimonials .card{
-min-width:260px;
-background:#020617;
-padding:20px;
-border-radius:15px;
-scroll-snap-align:start
+.card{
+  min-width:260px;
+  background:var(--card);
+  padding:18px;
+  border-radius:16px;
+  scroll-snap-align:start;
 }
 
-/* ===== CHATBOT ===== */
-.chatbot-btn{
-position:fixed;
-right:20px;
-bottom:20px;
-background:#00eaff;
-color:#000;
-padding:12px 18px;
-border-radius:30px;
-cursor:pointer;
-font-weight:bold
+/* ===== CHAT BOT ===== */
+.chat-btn{
+  position:fixed;
+  right:20px;
+  bottom:20px;
+  background:var(--accent);
+  color:#fff;
+  border:none;
+  padding:14px;
+  border-radius:50%;
+  font-size:18px;
 }
 
-.chatbox{
-position:fixed;
-right:20px;
-bottom:80px;
-width:280px;
-background:#020617;
-border-radius:15px;
-display:none;
-flex-direction:column
+.chat{
+  position:fixed;
+  bottom:90px;
+  right:20px;
+  width:280px;
+  background:#020617;
+  border-radius:14px;
+  display:none;
+  flex-direction:column;
 }
 
-.chatbox header{
-padding:10px;
-text-align:center;
-color:#00eaff
+.chat header{
+  padding:10px;
+  background:var(--accent);
 }
 
-.chatbox .messages{
-padding:10px;
-height:200px;
-overflow:auto;
-font-size:13px
+.chat .messages{
+  padding:10px;
+  height:180px;
+  overflow:auto;
+  font-size:13px;
 }
 
-.chatbox input{
-border:none;
-padding:10px;
-outline:none;
-width:100%
+.chat input{
+  border:none;
+  padding:10px;
+  outline:none;
 }
 
-/* ===== SNOW ===== */
-.snow{
-position:fixed;
-top:0;
-left:0;
-width:100%;
-height:100%;
-pointer-events:none;
-background:url('https://i.imgur.com/N7ETzFO.png');
-animation:snow 20s linear infinite;
-opacity:.3
-}
-
-@keyframes snow{
-0%{background-position:0 0}
-100%{background-position:0 1000px}
+/* ===== FB BTN ===== */
+.fb-btn{
+  position:fixed;
+  left:20px;
+  bottom:20px;
+  background:#1877f2;
+  color:#fff;
+  padding:12px 16px;
+  border-radius:30px;
+  text-decoration:none;
+  font-size:13px;
 }
 </style>
 </head>
 
 <body>
 
-<div class="snow"></div>
-
 <nav>
-<div class="logo">Diaa AI Pro</div>
-<div>
-<a href="#">الرئيسية</a>
-<a href="#">خدماتنا</a>
-<a href="#">آراء العملاء</a>
-<a href="#">تواصل معنا</a>
-</div>
+  <div class="logo">Diaa AI Pro</div>
+  <div>
+    <a href="#services">خدماتنا</a>
+    <a href="#reviews">آراء العملاء</a>
+    <a href="https://www.facebook.com/diaa.coom" target="_blank">تواصل معنا</a>
+  </div>
 </nav>
 
 <section class="hero">
-<div class="hero-slider">
-ذكاء اصطناعي • سوشيال ميديا • أمن سيبراني • تصميم مواقع • تطبيقات
-</div>
+  <h1>Diaa AI Pro</h1>
+  <div class="ticker">
+    <span>ذكاء اصطناعي • سوشيال ميديا • أمن سيبراني • تصميم مواقع وتطبيقات • حلول رقمية عالمية</span>
+  </div>
 </section>
 
-<section class="section">
-<h2>خدماتنا</h2>
+<section class="section" id="services">
+  <h2>خدماتنا</h2>
 
-<div class="services-wrapper">
-<div class="services-track">
+  <div class="services-wrapper">
+    <div class="services-row fast">
+      <!-- خدمات -->
+      <div class="service"><img src="https://cdn-icons-png.flaticon.com/512/1041/1041916.png"><h3>سوشيال ميديا</h3><a href="https://facebook.com/diaa.coom">طلب الخدمة</a></div>
+      <div class="service"><img src="https://cdn-icons-png.flaticon.com/512/841/841364.png"><h3>استرجاع الهواتف</h3><a href="https://facebook.com/diaa.coom">طلب الخدمة</a></div>
+      <div class="service"><img src="https://cdn-icons-png.flaticon.com/512/888/888879.png"><h3>رصيد فودافون</h3><a href="https://facebook.com/diaa.coom">طلب الخدمة</a></div>
+    </div>
 
-<!-- SERVICES -->
-<div class="service">
-<img src="https://cdn-icons-png.flaticon.com/512/1055/1055687.png">
-<h3>سوشيال ميديا</h3>
-<a href="https://www.facebook.com/diaa.coom" target="_blank">طلب الخدمة</a>
-</div>
+    <br>
 
-<div class="service">
-<img src="https://cdn-icons-png.flaticon.com/512/2920/2920277.png">
-<h3>استرجاع الهواتف</h3>
-<a href="https://www.facebook.com/diaa.coom" target="_blank">طلب الخدمة</a>
-</div>
-
-<div class="service">
-<img src="https://cdn-icons-png.flaticon.com/512/1006/1006771.png">
-<h3>إنشاء تطبيقات</h3>
-<a href="https://www.facebook.com/diaa.coom" target="_blank">طلب الخدمة</a>
-</div>
-
-<div class="service">
-<img src="https://cdn-icons-png.flaticon.com/512/5968/5968267.png">
-<h3>رصيد فودافون</h3>
-<a href="https://www.facebook.com/diaa.coom" target="_blank">طلب الخدمة</a>
-</div>
-
-<div class="service">
-<img src="https://cdn-icons-png.flaticon.com/512/5968/5968259.png">
-<h3>رصيد اتصالات</h3>
-<a href="https://www.facebook.com/diaa.coom" target="_blank">طلب الخدمة</a>
-</div>
-
-</div>
-</div>
+    <div class="services-row">
+      <div class="service"><img src="https://cdn-icons-png.flaticon.com/512/5968/5968841.png"><h3>رصيد اتصالات</h3><a href="https://facebook.com/diaa.coom">طلب الخدمة</a></div>
+      <div class="service"><img src="https://cdn-icons-png.flaticon.com/512/1055/1055687.png"><h3>إنشاء تطبيقات</h3><a href="https://facebook.com/diaa.coom">طلب الخدمة</a></div>
+      <div class="service"><img src="https://cdn-icons-png.flaticon.com/512/3064/3064197.png"><h3>أمن سيبراني</h3><a href="https://facebook.com/diaa.coom">طلب الخدمة</a></div>
+    </div>
+  </div>
 </section>
 
-<section class="section">
-<h2>آراء العملاء</h2>
-<div class="testimonials">
-<div class="card">⭐⭐⭐⭐⭐ خدمة ممتازة</div>
-<div class="card">⭐⭐⭐⭐⭐ احترافية عالية</div>
-<div class="card">⭐⭐⭐⭐⭐ نتائج قوية</div>
-</div>
+<section class="section" id="reviews">
+  <h2>آراء العملاء</h2>
+  <div class="testimonials">
+    <div class="card">⭐⭐⭐⭐⭐ خدمة عالمية</div>
+    <div class="card">⭐⭐⭐⭐⭐ سرعة واحتراف</div>
+    <div class="card">⭐⭐⭐⭐⭐ ثقة كاملة</div>
+  </div>
 </section>
 
-<div class="chatbot-btn" onclick="toggleChat()">Chat</div>
-
-<div class="chatbox" id="chatbox">
-<header>Diaa AI 🤖</header>
-<div class="messages" id="messages">مرحبًا 👋 كيف أساعدك؟</div>
-<input type="text" placeholder="اكتب رسالتك..." onkeydown="sendMsg(event)">
+<!-- CHAT -->
+<button class="chat-btn" onclick="toggleChat()">💬</button>
+<div class="chat" id="chat">
+  <header>Diaa AI 🤖</header>
+  <div class="messages" id="msgs">أهلاً بيك 👋</div>
+  <input placeholder="اكتب رسالتك..." onkeydown="sendMsg(event)">
 </div>
+
+<a class="fb-btn" href="https://www.facebook.com/diaa.coom" target="_blank">Facebook</a>
 
 <script>
 function toggleChat(){
-document.getElementById('chatbox').style.display =
-document.getElementById('chatbox').style.display=='flex'?'none':'flex';
+  const c=document.getElementById('chat');
+  c.style.display=c.style.display==='flex'?'none':'flex';
 }
-
 function sendMsg(e){
-if(e.key==="Enter"){
-let msg=e.target.value;
-let box=document.getElementById('messages');
-box.innerHTML+=`<div>🧑 ${msg}</div>`;
-setTimeout(()=>{
-box.innerHTML+=`<div>🤖 أهلاً بيك، تواصل معنا على فيسبوك لتنفيذ طلبك فورًا</div>`;
-},800);
-e.target.value='';
-box.scrollTop=box.scrollHeight;
-}
+  if(e.key==='Enter'){
+    const m=e.target.value;
+    if(!m)return;
+    const box=document.getElementById('msgs');
+    box.innerHTML+=`<div>👤 ${m}</div><div>🤖 تمام، هنتواصل معاك فورًا 🔥</div>`;
+    e.target.value='';
+  }
 }
 </script>
 
