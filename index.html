@@ -2,449 +2,302 @@
 <html lang="ar" dir="rtl">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Diaa AI Pro</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;500;700&display=swap" rel="stylesheet">
 
 <style>
-/* ================= RESET ================= */
-*{
-margin:0;
-padding:0;
-box-sizing:border-box;
-font-family:'Segoe UI',Tahoma,sans-serif
+:root{
+  --bg:#070b16;
+  --card:#0d1224;
+  --accent:#00eaff;
+  --accent2:#7b61ff;
+  --text:#ffffff;
 }
 
+*{box-sizing:border-box}
 body{
-background:#050814;
-color:#fff;
-overflow-x:hidden
+  margin:0;
+  font-family:'Cairo',sans-serif;
+  background:radial-gradient(circle at top,#0c1330,#05070f);
+  color:var(--text);
+  overflow-x:hidden;
 }
 
 /* ================= NAVBAR ================= */
 nav{
-position:fixed;
-top:0;
-width:100%;
-padding:15px 30px;
-display:flex;
-justify-content:space-between;
-align-items:center;
-background:rgba(5,8,20,.5);
-backdrop-filter:blur(12px);
-z-index:999
+  position:fixed;
+  top:0;
+  width:100%;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  padding:14px;
+  background:rgba(5,7,15,.65);
+  backdrop-filter:blur(12px);
+  z-index:1000;
 }
 
 .logo{
-font-size:18px;
-font-weight:bold;
-color:#5efcff;
-text-shadow:0 0 10px #5efcff;
-animation:glow 2s infinite alternate
+  font-weight:700;
+  letter-spacing:3px;
+  color:var(--accent);
+  font-size:14px;
+  animation:logoGlow 3s infinite;
 }
 
-@keyframes glow{
-from{opacity:.6}
-to{opacity:1}
-}
-
-nav ul{
-display:flex;
-gap:20px;
-list-style:none
-}
-
-nav ul li{
-cursor:pointer;
-opacity:.8
+@keyframes logoGlow{
+  0%,100%{opacity:.5}
+  50%{opacity:1;text-shadow:0 0 25px var(--accent)}
 }
 
 /* ================= HERO ================= */
 .hero{
-min-height:100vh;
-display:flex;
-align-items:center;
-justify-content:space-between;
-padding:120px 40px 60px
+  min-height:100vh;
+  padding-top:120px;
+  text-align:center;
+  position:relative;
 }
 
-.hero-text h1{
-font-size:2.4rem;
-color:#5efcff
+.hero h1{
+  font-size:26px;
+  margin-bottom:10px;
 }
 
-.hero-text p{
-margin:15px 0;
-opacity:.85
+.hero p{
+  opacity:.85;
+  font-size:14px;
 }
 
-.hero-text button{
-padding:12px 28px;
-border:none;
-border-radius:30px;
-background:linear-gradient(90deg,#00e5ff,#7c7cff);
-font-weight:bold;
-cursor:pointer
+/* ================= ROBOT ================= */
+.mini-robot{
+  position:relative;
+  margin:40px auto;
+  width:90px;
+  height:130px;
+  animation:float 4s ease-in-out infinite;
 }
 
-.robot{
-width:220px;
-height:220px;
-border-radius:50%;
-background:radial-gradient(circle,#00e5ff,#050814);
-box-shadow:0 0 50px #00e5ff;
-animation:float 4s ease-in-out infinite
+.mini-robot .head{
+  width:90px;
+  height:65px;
+  background:#0ff;
+  border-radius:40px;
+  box-shadow:0 0 25px var(--accent);
+  position:relative;
+}
+
+.eye{
+  width:8px;
+  height:8px;
+  background:#000;
+  border-radius:50%;
+  position:absolute;
+  top:26px;
+}
+.eye.left{left:26px}
+.eye.right{right:26px}
+
+.mini-robot .body{
+  width:60px;
+  height:40px;
+  background:#00cfff;
+  border-radius:20px;
+  margin:10px auto 0;
+  box-shadow:0 0 20px var(--accent);
 }
 
 @keyframes float{
-0%{transform:translateY(0)}
-50%{transform:translateY(-20px)}
-100%{transform:translateY(0)}
+  0%,100%{transform:translateY(0)}
+  50%{transform:translateY(-12px)}
 }
 
 /* ================= SECTIONS ================= */
-section{
-padding:60px 20px
+.section{
+  padding:60px 20px;
 }
 
-h2{
-text-align:center;
-color:#5efcff;
-margin-bottom:30px
+.section h2{
+  text-align:center;
+  color:var(--accent);
+  margin-bottom:25px;
 }
 
-/* ================= SLIDERS ================= */
-.slider{
-display:flex;
-gap:20px;
-overflow-x:auto;
-scroll-snap-type:x mandatory;
-padding-bottom:10px
-}
-.slider::-webkit-scrollbar{display:none}
-
-.card{
-min-width:260px;
-background:rgba(255,255,255,.05);
-border-radius:16px;
-padding:20px;
-scroll-snap-align:start;
-box-shadow:0 0 15px rgba(0,229,255,.2)
+/* ================= SERVICES ================= */
+.services-row{
+  display:flex;
+  gap:14px;
+  overflow-x:auto;
+  padding:10px;
+  scroll-snap-type:x mandatory;
 }
 
-.card:hover{
-transform:translateY(-8px)
+.service{
+  min-width:180px;
+  background:linear-gradient(145deg,#0f1530,#090e20);
+  border-radius:18px;
+  padding:16px;
+  text-align:center;
+  scroll-snap-align:center;
+  box-shadow:0 10px 30px rgba(0,0,0,.6);
 }
 
-.icon{
-font-size:30px;
-color:#5efcff;
-margin-bottom:10px
+.service img{
+  width:46px;
+  margin-bottom:8px;
+  filter:drop-shadow(0 0 10px var(--accent));
 }
 
-/* ================= TESTIMONIAL ================= */
-.stars{color:gold;margin:6px 0}
+.service a{
+  display:block;
+  margin-top:8px;
+  font-size:12px;
+  color:var(--accent);
+  text-decoration:none;
+}
+
+/* ================= TESTIMONIALS ================= */
+.testimonials{
+  display:flex;
+  gap:16px;
+  overflow-x:auto;
+  padding:10px;
+  scroll-snap-type:x mandatory;
+}
+
+.review{
+  min-width:240px;
+  background:var(--card);
+  border-radius:16px;
+  padding:16px;
+  scroll-snap-align:center;
+}
+
+.stars{color:gold}
 
 /* ================= FAQ ================= */
+.faq{
+  max-width:850px;
+  margin:auto;
+}
+
 .faq-item{
-background:rgba(255,255,255,.05);
-border-radius:12px;
-margin-bottom:10px;
-padding:15px;
-cursor:pointer
+  background:linear-gradient(145deg,#0f1530,#090e20);
+  border-radius:16px;
+  margin-bottom:12px;
+  overflow:hidden;
+}
+
+.faq-question{
+  padding:16px;
+  cursor:pointer;
+  display:flex;
+  justify-content:space-between;
 }
 
 .faq-answer{
-display:none;
-opacity:.85;
-margin-top:10px
+  max-height:0;
+  overflow:hidden;
+  padding:0 16px;
+  opacity:0;
+  transition:.4s;
 }
 
-/* ================= BOT ================= */
-.bot{
-position:fixed;
-bottom:20px;
-left:20px;
-width:60px;
-height:60px;
-border-radius:50%;
-background:radial-gradient(circle,#00e5ff,#050814);
-box-shadow:0 0 25px #00e5ff;
-animation:pulse 2s infinite;
-display:flex;
-align-items:center;
-justify-content:center;
-font-size:22px
+.faq-item.active .faq-answer{
+  max-height:200px;
+  padding:12px 16px;
+  opacity:.9;
 }
 
-@keyframes pulse{
-0%{box-shadow:0 0 15px #00e5ff}
-50%{box-shadow:0 0 35px #00e5ff}
-100%{box-shadow:0 0 15px #00e5ff}
+/* ================= FLOAT BUTTON ================= */
+.fb-btn{
+  position:fixed;
+  bottom:20px;
+  right:20px;
+  background:linear-gradient(135deg,var(--accent),var(--accent2));
+  color:#fff;
+  padding:12px 18px;
+  border-radius:30px;
+  font-size:13px;
+  text-decoration:none;
+  box-shadow:0 0 25px var(--accent);
 }
 
-/* ================= CONTACT ================= */
-.contact{
-text-align:center
-}
-
-.contact a{
-display:inline-block;
-padding:14px 32px;
-border-radius:40px;
-background:linear-gradient(90deg,#00e5ff,#7c7cff);
-color:#000;
-font-weight:bold;
-text-decoration:none
+/* ================= FOOTER ================= */
+footer{
+  text-align:center;
+  padding:20px;
+  font-size:12px;
+  opacity:.6;
 }
 
 /* ================= MOBILE ================= */
 @media(max-width:768px){
-.hero{
-flex-direction:column;
-text-align:center
-}
-nav ul{display:none}
-}
-  .robot {
-  position: relative;
-  width: 220px;
-  height: 320px;
-  margin: auto;
-  animation: float 4s ease-in-out infinite;
-}
-
-/* Antennas */
-.antenna {
-  position: absolute;
-  top: -8px;
-  width: 10px;
-  height: 10px;
-  background: #00e5ff;
-  border-radius: 50%;
-  box-shadow: 0 0 12px #00e5ff;
-}
-.antenna.left { left: 50px; }
-.antenna.right { right: 50px; }
-
-/* Head */
-.head {
-  width: 220px;
-  height: 150px;
-  background: #ffffff;
-  border-radius: 110px;
-  margin: auto;
-  box-shadow: 0 0 45px #00e5ff;
-  position: relative;
-}
-
-/* Sensor */
-.sensor {
-  width: 40px;
-  height: 10px;
-  background: #000;
-  border-radius: 10px;
-  margin: 10px auto;
-}
-
-/* Face */
-.face {
-  width: 180px;
-  height: 90px;
-  background: #6b8b9a;
-  border-radius: 60px;
-  margin: auto;
-  position: relative;
-}
-
-/* Eyes */
-.eye {
-  width: 16px;
-  height: 16px;
-  background: #00e5ff;
-  border-radius: 50%;
-  position: absolute;
-  top: 30px;
-  box-shadow: 0 0 12px #00e5ff;
-}
-.eye.left { left: 40px; }
-.eye.right { right: 40px; }
-
-/* Mouth */
-.mouth {
-  width: 40px;
-  height: 12px;
-  border-bottom: 4px solid #000;
-  border-radius: 50%;
-  position: absolute;
-  bottom: 20px;
-  left: 50%;
-  transform: translateX(-50%);
-}
-
-/* Body */
-.body {
-  width: 120px;
-  height: 110px;
-  background: #ffffff;
-  border-radius: 30px;
-  margin: 15px auto;
-  box-shadow: 0 0 35px #00e5ff;
-}
-
-/* Arm */
-.arm {
-  position: absolute;
-  right: -30px;
-  top: 190px;
-  width: 60px;
-  height: 10px;
-  background: #9aa;
-  border-radius: 10px;
-  animation: wave 2s infinite;
-}
-
-/* Animations */
-@keyframes float {
-  0% { transform: translateY(0); }
-  50% { transform: translateY(-15px); }
-  100% { transform: translateY(0); }
-}
-
-@keyframes wave {
-  0% { transform: rotate(0deg); }
-  50% { transform: rotate(20deg); }
-  100% { transform: rotate(0deg); }
-}
-
-/* Mobile fix */
-@media (max-width: 768px) {
-  .robot {
-    transform: scale(0.85);
-  }
+  .hero h1{font-size:20px}
 }
 </style>
 </head>
 
 <body>
 
-<!-- NAV -->
 <nav>
-<div class="logo">Diaa AI Pro</div>
-<ul>
-<li>من نحن</li><li>الخدمات</li><li>الآراء</li><li>الأسئلة</li><li>تواصل</li>
-</ul>
+  <div class="logo">DIAA AI PRO</div>
 </nav>
 
-<!-- HERO -->
-<div class="hero">
-<div class="hero-text">
-<h1>مستقبل التكنولوجيا يبدأ من هنا</h1>
-<p>حلول ذكاء اصطناعي وتحول رقمي عالمية</p>
-<button>اطلب خدمتك الآن</button>
-</div>
-<div class="robot">
-  <div class="antenna left"></div>
-  <div class="antenna right"></div>
+<section class="hero">
+  <h1>مستقبل التكنولوجيا يبدأ من هنا</h1>
+  <p>حلول ذكاء اصطناعي وتحول رقمي عالمي</p>
 
-  <div class="head">
-    <div class="sensor"></div>
-    <div class="face">
+  <div class="mini-robot">
+    <div class="head">
       <div class="eye left"></div>
       <div class="eye right"></div>
-      <div class="mouth"></div>
     </div>
+    <div class="body"></div>
   </div>
+</section>
 
-  <div class="body"></div>
-  <div class="arm"></div>
-</div>
-<!-- SERVICES -->
-<section>
+<section class="section">
 <h2>خدماتنا</h2>
-
-<div class="slider">
-<div class="card"><div class="icon">🌐</div>تصميم مواقع</div>
-<div class="card"><div class="icon">📱</div>تطبيقات موبايل</div>
-<div class="card"><div class="icon">🤖</div>شات بوت</div>
-<div class="card"><div class="icon">📊</div>تحليل بيانات</div>
-<div class="card"><div class="icon">🔐</div>أمن سيبراني</div>
-<div class="card"><div class="icon">🎯</div>تسويق رقمي</div>
-<div class="card"><div class="icon">🧠</div>ذكاء اصطناعي</div>
-<div class="card"><div class="icon">⚙️</div>أتمتة أعمال</div>
-</div>
-
-<div class="slider">
-<div class="card">SEO</div>
-<div class="card">Branding</div>
-<div class="card">UI UX</div>
-<div class="card">CRM</div>
-<div class="card">ERP</div>
-<div class="card">AI Marketing</div>
-<div class="card">Video Editing</div>
-</div>
-
-<div class="slider">
-<div class="card">Cloud</div>
-<div class="card">DevOps</div>
-<div class="card">Cyber Defense</div>
-<div class="card">AI Training</div>
-<div class="card">Automation</div>
-<div class="card">Data Science</div>
+<div class="services-row">
+  <div class="service"><img src="https://cdn-icons-png.flaticon.com/512/919/919851.png"><div>تصميم مواقع</div><a href="#">طلب الخدمة</a></div>
+  <div class="service"><img src="https://cdn-icons-png.flaticon.com/512/4712/4712109.png"><div>ذكاء اصطناعي</div><a href="#">طلب الخدمة</a></div>
+  <div class="service"><img src="https://cdn-icons-png.flaticon.com/512/3064/3064197.png"><div>أمن سيبراني</div><a href="#">طلب الخدمة</a></div>
+  <div class="service"><img src="https://cdn-icons-png.flaticon.com/512/2111/2111463.png"><div>إدارة سوشيال</div><a href="#">طلب الخدمة</a></div>
 </div>
 </section>
 
-<!-- TESTIMONIAL -->
-<section>
+<section class="section">
 <h2>آراء العملاء</h2>
-<div class="slider">
-<div class="card">أحمد علي<div class="stars">★★★★★</div>خدمة ممتازة</div>
-<div class="card">سارة محمد<div class="stars">★★★★★</div>تصميم عالمي</div>
-<div class="card">محمد حسن<div class="stars">★★★★★</div>احترافية عالية</div>
+<div class="testimonials">
+  <div class="review"><strong>سارة علي</strong><div class="stars">★★★★★</div><p>نتائج ممتازة واحترافية.</p></div>
+  <div class="review"><strong>محمد حسن</strong><div class="stars">★★★★★</div><p>أفضل تجربة تقنية.</p></div>
 </div>
 </section>
 
-<!-- FAQ -->
-<section>
+<section class="section">
 <h2>الأسئلة الشائعة</h2>
-
-<div class="faq-item" onclick="toggleFaq(this)">
-هل الخدمات مناسبة للشركات؟
-<div class="faq-answer">نعم، للأفراد والشركات.</div>
-</div>
-
-<div class="faq-item" onclick="toggleFaq(this)">
-مدة التنفيذ؟
-<div class="faq-answer">حسب نوع المشروع.</div>
-</div>
-
-<div class="faq-item" onclick="toggleFaq(this)">
-هل يوجد دعم فني؟
-<div class="faq-answer">دعم كامل بعد التسليم.</div>
-</div>
-
-</section>
-
-<!-- ABOUT -->
-<section>
-<h2>من هو ضياء محسن</h2>
-<div class="faq-item">
-مبرمج ومختص في الذكاء الاصطناعي والتحول الرقمي، أعمل على تحويل الأفكار إلى حلول تقنية ذكية تساعد الشركات على النمو.
+<div class="faq">
+  <div class="faq-item">
+    <div class="faq-question">هل الخدمات مناسبة للشركات؟</div>
+    <div class="faq-answer">نعم، للأفراد والشركات.</div>
+  </div>
+  <div class="faq-item">
+    <div class="faq-question">مدة التنفيذ؟</div>
+    <div class="faq-answer">من 3 إلى 7 أيام.</div>
+  </div>
 </div>
 </section>
 
-<!-- CONTACT -->
-<section class="contact">
-<a href="https://www.facebook.com/diaa.coom" target="_blank">تواصل معنا عبر فيسبوك</a>
-</section>
+<footer>© 2025 Diaa AI Pro</footer>
 
-<!-- BOT -->
-<div class="bot">🤖</div>
+<a class="fb-btn" href="https://www.facebook.com/diaa.coom" target="_blank">Facebook</a>
 
 <script>
-function toggleFaq(el){
-let ans=el.querySelector('.faq-answer');
-ans.style.display=ans.style.display==='block'?'none':'block'
-}
+document.querySelectorAll('.faq-question').forEach(q=>{
+  q.onclick=()=>q.parentElement.classList.toggle('active');
+});
 </script>
 
 </body>
