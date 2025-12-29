@@ -169,17 +169,40 @@ z-index:999;
 .whatsapp{right:20px;background:#25d366}
 .facebook{left:20px;background:#1877f2}
 
-/* CHAT BOT */
-.chatbot{
-position:fixed;
-bottom:90px;
-right:20px;
-background:#0b1020;
-padding:14px;
-border-radius:16px;
-width:260px;
-font-size:13px;
-display:none;
+#chatbot{
+  position: fixed;
+  bottom: 90px;
+  right: 20px;
+  background: #0b1020;
+  padding: 14px;
+  border-radius: 16px;
+  width: 260px;
+  font-size: 13px;
+  display: none;   /* 👈 السطر المهم */
+  z-index: 1000;
+   }
+   #chatbot-toggle{
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  width: 55px;
+  height: 55px;
+  background: linear-gradient(135deg,#00f2ff,#0066ff);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 26px;
+  cursor: pointer;
+  z-index: 1001;
+  box-shadow: 0 0 20px rgba(0,242,255,.6);
+  animation: botFloat 2.5s ease-in-out infinite;
+}
+
+@keyframes botFloat{
+  0%{ transform: translateY(0); }
+  50%{ transform: translateY(-8px); }
+  100%{ transform: translateY(0); }
 }
 
 footer{
