@@ -205,6 +205,123 @@ text-align:center
 }
 nav ul{display:none}
 }
+  .robot {
+  position: relative;
+  width: 220px;
+  height: 320px;
+  margin: auto;
+  animation: float 4s ease-in-out infinite;
+}
+
+/* Antennas */
+.antenna {
+  position: absolute;
+  top: -8px;
+  width: 10px;
+  height: 10px;
+  background: #00e5ff;
+  border-radius: 50%;
+  box-shadow: 0 0 12px #00e5ff;
+}
+.antenna.left { left: 50px; }
+.antenna.right { right: 50px; }
+
+/* Head */
+.head {
+  width: 220px;
+  height: 150px;
+  background: #ffffff;
+  border-radius: 110px;
+  margin: auto;
+  box-shadow: 0 0 45px #00e5ff;
+  position: relative;
+}
+
+/* Sensor */
+.sensor {
+  width: 40px;
+  height: 10px;
+  background: #000;
+  border-radius: 10px;
+  margin: 10px auto;
+}
+
+/* Face */
+.face {
+  width: 180px;
+  height: 90px;
+  background: #6b8b9a;
+  border-radius: 60px;
+  margin: auto;
+  position: relative;
+}
+
+/* Eyes */
+.eye {
+  width: 16px;
+  height: 16px;
+  background: #00e5ff;
+  border-radius: 50%;
+  position: absolute;
+  top: 30px;
+  box-shadow: 0 0 12px #00e5ff;
+}
+.eye.left { left: 40px; }
+.eye.right { right: 40px; }
+
+/* Mouth */
+.mouth {
+  width: 40px;
+  height: 12px;
+  border-bottom: 4px solid #000;
+  border-radius: 50%;
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+/* Body */
+.body {
+  width: 120px;
+  height: 110px;
+  background: #ffffff;
+  border-radius: 30px;
+  margin: 15px auto;
+  box-shadow: 0 0 35px #00e5ff;
+}
+
+/* Arm */
+.arm {
+  position: absolute;
+  right: -30px;
+  top: 190px;
+  width: 60px;
+  height: 10px;
+  background: #9aa;
+  border-radius: 10px;
+  animation: wave 2s infinite;
+}
+
+/* Animations */
+@keyframes float {
+  0% { transform: translateY(0); }
+  50% { transform: translateY(-15px); }
+  100% { transform: translateY(0); }
+}
+
+@keyframes wave {
+  0% { transform: rotate(0deg); }
+  50% { transform: rotate(20deg); }
+  100% { transform: rotate(0deg); }
+}
+
+/* Mobile fix */
+@media (max-width: 768px) {
+  .robot {
+    transform: scale(0.85);
+  }
+}
 </style>
 </head>
 
@@ -232,16 +349,15 @@ nav ul{display:none}
   <div class="head">
     <div class="sensor"></div>
     <div class="face">
-      <span class="eye left"></span>
-      <span class="eye right"></span>
-      <span class="mouth"></span>
+      <div class="eye left"></div>
+      <div class="eye right"></div>
+      <div class="mouth"></div>
     </div>
   </div>
-<div class="robot-body"></div>
+
+  <div class="body"></div>
   <div class="arm"></div>
 </div>
-</div>
-
 <!-- SERVICES -->
 <section>
 <h2>خدماتنا</h2>
