@@ -1,232 +1,233 @@
 <!DOCTYPE html>
-<html lang="ar" dir="rtl">
+<html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>Diaa AI Pro</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;500;700&display=swap" rel="stylesheet">
+<title>Diaa AI Pro | Future of Technology</title>
 
 <style>
-:root{
---bg:#05070f;
---card:#0d1224;
---accent:#00eaff;
---text:#ffffff;
+/* ================= ROOT ================= */
+:root {
+  --bg:#050510;
+  --card:#0b0b1f;
+  --neon:#00eaff;
+  --purple:#7a5cff;
+  --text:#ffffff;
 }
 
-*{box-sizing:border-box}
-
-body{
-margin:0;
-font-family:'Cairo',sans-serif;
-background:radial-gradient(circle at top,#0c1330,#05070f);
-color:var(--text);
+* {
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:'Segoe UI',sans-serif;
 }
 
-/* NAV */
-nav{
-position:fixed;
-top:0;
-width:100%;
-padding:14px;
-text-align:center;
-background:rgba(5,7,15,.6);
-backdrop-filter:blur(12px);
-z-index:999;
+body {
+  background: radial-gradient(circle at top, #0a0a2a, var(--bg));
+  color:var(--text);
+  overflow-x:hidden;
 }
 
-.logo{
-color:var(--accent);
-font-weight:700;
-letter-spacing:4px;
-font-size:14px;
+/* ================= NAVBAR ================= */
+nav {
+  position:fixed;
+  top:0;
+  width:100%;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:15px 50px;
+  backdrop-filter: blur(15px);
+  background:rgba(10,10,30,.5);
+  z-index:1000;
 }
 
-/* HERO */
-.hero{
-padding:140px 20px 60px;
-text-align:center;
+nav h1 {
+  color:var(--neon);
+  font-size:24px;
+  animation:spin 10s linear infinite;
 }
 
-.hero h1{
-font-size:26px;
-margin-bottom:10px;
+@keyframes spin {
+  0%{transform:rotate(0)}
+  100%{transform:rotate(360deg)}
 }
 
-.hero p{
-opacity:.85;
-font-size:14px;
+nav ul {
+  list-style:none;
+  display:flex;
+  gap:25px;
 }
 
-/* SECTION */
-.section{
-padding:60px 20px;
+nav a {
+  text-decoration:none;
+  color:white;
+  font-weight:500;
 }
 
-.section h2{
-text-align:center;
-color:var(--accent);
-margin-bottom:30px;
+/* ================= HERO ================= */
+.hero {
+  height:100vh;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
+  text-align:center;
+  padding:20px;
 }
 
-/* SERVICES */
-.services{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(150px,1fr));
-gap:18px;
-max-width:1100px;
-margin:auto;
+.hero h2 {
+  font-size:48px;
+  background:linear-gradient(90deg,var(--neon),var(--purple));
+  -webkit-background-clip:text;
+  -webkit-text-fill-color:transparent;
 }
 
-.service{
-background:linear-gradient(145deg,#0f1530,#090e20);
-border-radius:18px;
-padding:18px;
-text-align:center;
-box-shadow:0 10px 30px rgba(0,0,0,.6);
+.hero p {
+  margin:20px 0;
+  max-width:600px;
+  opacity:.85;
 }
 
-.service img{
-width:48px;
-margin-bottom:10px;
-filter:drop-shadow(0 0 10px var(--accent));
+.hero button {
+  padding:15px 35px;
+  border:none;
+  border-radius:30px;
+  background:var(--neon);
+  color:black;
+  font-size:16px;
+  cursor:pointer;
+  box-shadow:0 0 20px var(--neon);
 }
 
-.service a{
-display:block;
-margin-top:8px;
-color:var(--accent);
-text-decoration:none;
-font-size:12px;
+/* ================= SECTIONS ================= */
+section {
+  padding:80px 60px;
 }
 
-/* REVIEWS */
-.reviews{
-display:flex;
-gap:20px;
-justify-content:center;
-flex-wrap:wrap;
+section h3 {
+  text-align:center;
+  font-size:36px;
+  margin-bottom:50px;
 }
 
-.review-card{
-background:var(--card);
-border-radius:16px;
-padding:20px;
-width:260px;
-text-align:center;
+/* ================= SERVICES ================= */
+.services {
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+  gap:25px;
 }
 
-.avatar{
-width:50px;
-height:50px;
-border-radius:50%;
-background:var(--accent);
-color:#000;
-display:flex;
-align-items:center;
-justify-content:center;
-font-weight:700;
-margin:auto auto 10px;
+.service {
+  background:var(--card);
+  padding:25px;
+  border-radius:20px;
+  text-align:center;
+  box-shadow:0 0 20px rgba(0,234,255,.15);
+  transition:.3s;
 }
 
-.stars{color:gold}
-
-/* FAQ */
-.faq{
-max-width:850px;
-margin:auto;
+.service:hover {
+  transform:translateY(-10px) scale(1.03);
+  box-shadow:0 0 40px var(--neon);
 }
 
-.faq-item{
-background:linear-gradient(145deg,#0f1530,#090e20);
-border-radius:16px;
-margin-bottom:12px;
-overflow:hidden;
+/* ================= TESTIMONIALS ================= */
+.testimonials {
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+  gap:25px;
 }
 
-.faq-q{
-padding:16px;
-cursor:pointer;
-display:flex;
-justify-content:space-between;
+.testimonial {
+  background:var(--card);
+  padding:25px;
+  border-radius:20px;
 }
 
-.faq-a{
-max-height:0;
-overflow:hidden;
-padding:0 16px;
-opacity:0;
-transition:.4s;
+/* ================= FAQ ================= */
+.faq-item {
+  background:var(--card);
+  margin-bottom:15px;
+  padding:20px;
+  border-radius:15px;
+  cursor:pointer;
 }
 
-.faq-item.active .faq-a{
-max-height:200px;
-padding:12px 16px 16px;
-opacity:1;
+.faq-item p {
+  display:none;
+  margin-top:10px;
+  opacity:.85;
 }
 
-/* CHATBOT */
-.bot-btn{
-position:fixed;
-bottom:20px;
-right:20px;
-width:60px;
-height:60px;
-border-radius:50%;
-background:var(--accent);
-display:flex;
-align-items:center;
-justify-content:center;
-cursor:pointer;
-font-size:26px;
-color:#000;
-z-index:999;
+/* ================= CHATBOT ================= */
+.chatbot {
+  position:fixed;
+  bottom:20px;
+  right:20px;
+  width:320px;
+  background:var(--card);
+  border-radius:20px;
+  box-shadow:0 0 25px var(--neon);
+  display:none;
+  flex-direction:column;
 }
 
-.bot{
-position:fixed;
-bottom:90px;
-right:20px;
-width:260px;
-background:#0b1020;
-border-radius:16px;
-display:none;
-flex-direction:column;
+.chat-header {
+  padding:15px;
+  background:linear-gradient(90deg,var(--neon),var(--purple));
+  color:black;
+  border-radius:20px 20px 0 0;
 }
 
-.bot-header{
-padding:12px;
-background:var(--accent);
-color:#000;
-border-radius:16px 16px 0 0;
-font-weight:700;
+.chat-body {
+  padding:15px;
+  height:200px;
+  overflow-y:auto;
+  font-size:14px;
 }
 
-.bot-body{
-padding:10px;
-height:200px;
-overflow:auto;
-font-size:13px;
+.chat-input {
+  display:flex;
 }
 
-.bot-input{
-border:none;
-padding:10px;
-border-radius:0 0 16px 16px;
-outline:none;
+.chat-input input {
+  flex:1;
+  padding:10px;
+  border:none;
+  outline:none;
 }
 
-.bot-msg{margin-bottom:8px}
-.user{color:#00eaff}
-.bot-reply{opacity:.8}
+.chat-input button {
+  padding:10px 15px;
+  border:none;
+  background:var(--neon);
+  cursor:pointer;
+}
 
-/* FOOTER */
-footer{
-text-align:center;
-padding:20px;
-font-size:12px;
-opacity:.6;
+.chat-btn {
+  position:fixed;
+  bottom:20px;
+  right:20px;
+  width:60px;
+  height:60px;
+  border-radius:50%;
+  background:var(--neon);
+  box-shadow:0 0 30px var(--neon);
+  cursor:pointer;
+}
+
+/* ================= FOOTER ================= */
+footer {
+  text-align:center;
+  padding:30px;
+  opacity:.7;
+}
+
+/* ================= RESPONSIVE ================= */
+@media(max-width:768px){
+  nav {padding:15px 20px}
+  .hero h2 {font-size:34px}
 }
 </style>
 </head>
@@ -234,100 +235,73 @@ opacity:.6;
 <body>
 
 <nav>
-  <div class="logo">DIAA AI PRO</div>
+  <h1>Diaa AI Pro</h1>
+  <ul>
+    <li><a href="#services">Services</a></li>
+    <li><a href="#testimonials">Testimonials</a></li>
+    <li><a href="#faq">FAQ</a></li>
+    <li><a href="https://www.facebook.com/diaa.coom" target="_blank">Contact</a></li>
+  </ul>
 </nav>
 
 <div class="hero">
-  <h1>مستقبل التكنولوجيا يبدأ من هنا</h1>
-  <p>ذكاء اصطناعي • تصميم • تسويق • حلول رقمية متكاملة</p>
+  <h2>The Future of Technology Starts Here</h2>
+  <p>AI solutions, automation, and digital transformation for businesses worldwide.</p>
+  <button>Request Your Service</button>
 </div>
 
-<section class="section">
-<h2>خدماتنا</h2>
+<section id="services">
+<h3>Our Services</h3>
 <div class="services">
-
-<!-- 20+ SERVICES -->
-<div class="service"><img src="https://cdn-icons-png.flaticon.com/512/5968/5968764.png"><div>إدارة فيسبوك</div><a href="https://wa.me/201021292994">طلب الخدمة</a></div>
-<div class="service"><img src="https://cdn-icons-png.flaticon.com/512/2111/2111463.png"><div>إدارة إنستجرام</div><a href="https://wa.me/201021292994">طلب الخدمة</a></div>
-<div class="service"><img src="https://cdn-icons-png.flaticon.com/512/5969/5969020.png"><div>تيك توك</div><a href="https://wa.me/201021292994">طلب الخدمة</a></div>
-<div class="service"><img src="https://cdn-icons-png.flaticon.com/512/1384/1384060.png"><div>يوتيوب</div><a href="https://wa.me/201021292994">طلب الخدمة</a></div>
-
-<div class="service"><img src="https://cdn-icons-png.flaticon.com/512/919/919851.png"><div>برمجة مواقع</div><a href="https://wa.me/201021292994">طلب الخدمة</a></div>
-<div class="service"><img src="https://cdn-icons-png.flaticon.com/512/1006/1006363.png"><div>UI / UX</div><a href="https://wa.me/201021292994">طلب الخدمة</a></div>
-<div class="service"><img src="https://cdn-icons-png.flaticon.com/512/4712/4712109.png"><div>ذكاء اصطناعي</div><a href="https://wa.me/201021292994">طلب الخدمة</a></div>
-<div class="service"><img src="https://cdn-icons-png.flaticon.com/512/3064/3064197.png"><div>أمن سيبراني</div><a href="https://wa.me/201021292994">طلب الخدمة</a></div>
-
-<div class="service"><img src="https://cdn-icons-png.flaticon.com/512/3669/3669981.png"><div>إعلانات ممولة</div><a href="https://wa.me/201021292994">طلب الخدمة</a></div>
-<div class="service"><img src="https://cdn-icons-png.flaticon.com/512/3669/3669723.png"><div>تصميم محتوى</div><a href="https://wa.me/201021292994">طلب الخدمة</a></div>
-
+<script>
+const services=[
+"Web Development","UI/UX Design","Mobile Apps","AI Solutions","Smart Chatbots",
+"Automation","Data Analysis","Cyber Security","SEO","Speed Optimization",
+"CRM Systems","ERP Systems","Branding","Motion Graphics","Video Editing",
+"AI Marketing","Social Media Management","Facebook Ads","Content Creation",
+"Competitor Analysis","Server Management","Website Protection","Tech Consulting",
+"AI Training","Digital Transformation","Startup Consulting","Cloud Solutions",
+"Business Systems","Custom Software","AI for Companies"
+];
+document.write(services.map(s=>`<div class="service">${s}</div>`).join(""));
+</script>
 </div>
 </section>
 
-<section class="section">
-<h2>آراء العملاء</h2>
-<div class="reviews">
-<div class="review-card">
-<div class="avatar">س</div>
-<strong>سارة علي</strong>
-<div class="stars">★★★★★</div>
-<p>النتائج فاقت توقعاتي بكتير 👌</p>
-</div>
-
-<div class="review-card">
-<div class="avatar">م</div>
-<strong>محمد حسن</strong>
-<div class="stars">★★★★★</div>
-<p>احترافية وسرعة وتنفيذ عالمي 🔥</p>
-</div>
+<section id="testimonials">
+<h3>Client Testimonials</h3>
+<div class="testimonials">
+<div class="testimonial">⭐⭐⭐⭐⭐<br>Outstanding AI solutions!</div>
+<div class="testimonial">⭐⭐⭐⭐⭐<br>Very professional and fast.</div>
+<div class="testimonial">⭐⭐⭐⭐⭐<br>High quality work.</div>
+<div class="testimonial">⭐⭐⭐⭐⭐<br>Creative & futuristic design.</div>
+<div class="testimonial">⭐⭐⭐⭐⭐<br>Highly recommended.</div>
 </div>
 </section>
 
-<section class="section">
-<h2>الأسئلة الشائعة</h2>
-<div class="faq">
-
-<div class="faq-item">
-<div class="faq-q">هل الخدمات مناسبة للشركات؟ <span>+</span></div>
-<div class="faq-a">نعم للأفراد والشركات والمشاريع الكبرى.</div>
-</div>
-
-<div class="faq-item">
-<div class="faq-q">مدة التنفيذ؟ <span>+</span></div>
-<div class="faq-a">من 3 إلى 7 أيام حسب المشروع.</div>
-</div>
-
-<div class="faq-item">
-<div class="faq-q">هل يوجد دعم فني؟ <span>+</span></div>
-<div class="faq-a">دعم مستمر بعد التسليم.</div>
-</div>
-
-<div class="faq-item">
-<div class="faq-q">هل يمكن تخصيص الخدمة؟ <span>+</span></div>
-<div class="faq-a">بالطبع حسب احتياجك.</div>
-</div>
-
-</div>
+<section id="faq">
+<h3>FAQ</h3>
+<div class="faq-item"><strong>Are services customizable?</strong><p>Yes, fully customized.</p></div>
+<div class="faq-item"><strong>Do you offer support?</strong><p>24/7 technical support.</p></div>
+<div class="faq-item"><strong>Delivery time?</strong><p>3–7 days.</p></div>
 </section>
 
-<section class="section">
-<h2>من هو ضياء محسن</h2>
-<div class="faq">
-<div class="faq-item active">
-<div class="faq-a">
-مبرمج ومختص ذكاء اصطناعي وتسويق رقمي، أعمل على تحويل الأفكار إلى حلول تقنية احترافية تواكب المستقبل.
-</div>
-</div>
-</div>
+<section>
+<h3>Who is Diaa Mohsen?</h3>
+<p style="text-align:center;max-width:700px;margin:auto">
+Software developer and AI specialist transforming ideas into smart digital solutions for growth and success.
+</p>
 </section>
 
-<div class="bot-btn" onclick="toggleBot()">🤖</div>
+<div class="chat-btn" onclick="toggleChat()">🤖</div>
 
-<div class="bot" id="bot">
-<div class="bot-header">Diaa AI Bot</div>
-<div class="bot-body" id="botBody">
-<div class="bot-reply">مرحباً 👋 أنا مساعدك الذكي</div>
+<div class="chatbot" id="chatbot">
+<div class="chat-header">Diaa AI Bot</div>
+<div class="chat-body" id="chatBody">👋 Welcome to Diaa AI Pro</div>
+<div class="chat-input">
+<input id="chatInput" placeholder="Type here...">
+<button onclick="sendMsg()">Send</button>
 </div>
-<input class="bot-input" id="botInput" placeholder="اكتب سؤالك...">
 </div>
 
 <footer>
@@ -335,24 +309,22 @@ opacity:.6;
 </footer>
 
 <script>
-function toggleBot(){
-const b=document.getElementById('bot');
-b.style.display=b.style.display==='flex'?'none':'flex';
+function toggleChat(){
+  const c=document.getElementById("chatbot");
+  c.style.display=c.style.display==="flex"?"none":"flex";
 }
 
-document.getElementById("botInput").addEventListener("keypress",function(e){
-if(e.key==="Enter"){
-const body=document.getElementById("botBody");
-body.innerHTML+=`<div class="user">`+this.value+`</div>`;
-body.innerHTML+=`<div class="bot-reply">تواصل معنا لمعرفة التفاصيل 👌</div>`;
-this.value="";
-body.scrollTop=body.scrollHeight;
+function sendMsg(){
+  const input=document.getElementById("chatInput");
+  const body=document.getElementById("chatBody");
+  if(!input.value)return;
+  body.innerHTML+=`<br><strong>You:</strong> ${input.value}`;
+  setTimeout(()=>{
+    body.innerHTML+=`<br><strong>Bot:</strong> We provide AI & tech solutions 🚀`;
+    body.scrollTop=body.scrollHeight;
+  },600);
+  input.value="";
 }
-});
-
-document.querySelectorAll(".faq-q").forEach(q=>{
-q.onclick=()=>q.parentElement.classList.toggle("active");
-});
 </script>
 
 </body>
