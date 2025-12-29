@@ -226,23 +226,51 @@ document.write(services.map(s=>`
 </section>
 
 <!-- REVIEWS -->
-<section class="section">
-<h2>آراء العملاء</h2>
-<div class="testimonials">
-<div class="review">
-<img src="https://i.pravatar.cc/100?1">
-<div><strong>Ahmed Salah</strong></div>
-<div class="stars">★★★★★</div>
-<p>تجربة ممتازة واحترافية عالية</p>
-</div>
+<section id="reviews">
+  <h2>آراء عملائنا</h2>
 
-<div class="review">
-<img src="https://i.pravatar.cc/100?2">
-<div><strong>Mohamed Ali</strong></div>
-<div class="stars">★★★★★</div>
-<p>نتائج قوية ودعم سريع</p>
-</div>
-</div>
+  <div class="testimonials">
+    <div class="slider">
+      <div class="slides" id="slides">
+
+        <div class="testimonial">
+          <div class="card">
+            <div class="avatar">س</div>
+            <h4>سارة علي</h4>
+            <p>صاحبة متجر إلكتروني</p>
+            <div class="stars">★★★★★</div>
+            <p>التسويق الرقمي زوّد مبيعاتي 300٪ في 3 شهور فقط.</p>
+          </div>
+        </div>
+
+        <div class="testimonial">
+          <div class="card">
+            <div class="avatar">م</div>
+            <h4>محمد حسن</h4>
+            <p>رائد أعمال</p>
+            <div class="stars">★★★★★</div>
+            <p>احترافية عالية وتنفيذ سريع فوق المتوقع.</p>
+          </div>
+        </div>
+
+        <div class="testimonial">
+          <div class="card">
+            <div class="avatar">أ</div>
+            <h4>أحمد سمير</h4>
+            <p>مدير شركة</p>
+            <div class="stars">★★★★★</div>
+            <p>أفضل تجربة تعامل تقني مررت بها.</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="controls">
+      <button class="btn" onclick="prev()">‹</button>
+      <button class="btn" onclick="next()">›</button>
+    </div>
+  </div>
 </section>
 
 <!-- FAQ -->
