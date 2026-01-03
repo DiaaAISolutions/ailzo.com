@@ -198,6 +198,81 @@ html,body{
   40%{opacity:1}
   100%{transform:scale(1);opacity:0}
 }
+ /* ===== DOMAIN SALE ===== */
+.domain-sale{
+  margin:40px auto 0;
+  text-align:center;
+  max-width:520px;
+}
+
+.domain-sale h2{
+  font-size:22px;
+  color:#00d9ff;
+  margin-bottom:15px;
+}
+
+.domain-box{
+  border:1px solid rgba(0,217,255,.3);
+  padding:20px;
+  border-radius:16px;
+  background:rgba(0,0,0,.35);
+  backdrop-filter:blur(8px);
+}
+
+.domain-name{
+  font-size:32px;
+  font-weight:800;
+  letter-spacing:1px;
+  color:#fff;
+}
+
+.domain-desc{
+  font-size:14px;
+  opacity:.85;
+  margin-top:8px;
+}
+
+.countdown{
+  display:flex;
+  justify-content:center;
+  gap:12px;
+  margin:18px 0;
+}
+
+.countdown div{
+  background:#001018;
+  border-radius:12px;
+  padding:10px 14px;
+  min-width:70px;
+}
+
+.countdown span{
+  font-size:22px;
+  font-weight:700;
+  color:#00d9ff;
+}
+
+.countdown small{
+  display:block;
+  font-size:11px;
+  opacity:.7;
+}
+
+.buy-btn{
+  display:inline-block;
+  margin-top:10px;
+  padding:12px 26px;
+  border-radius:30px;
+  background:linear-gradient(135deg,#00d9ff,#00aaff);
+  color:#001018;
+  font-weight:700;
+  text-decoration:none;
+  transition:.3s;
+}
+
+.buy-btn:hover{
+  transform:scale(1.05);
+} 
 </style>
 </head>
 
@@ -255,6 +330,28 @@ html,body{
 </div>
 
 </div>
+ <!-- DOMAIN SALE SECTION -->
+<section class="domain-sale reveal delay2">
+  <h2>Premium Domain For Sale</h2>
+
+  <div class="domain-box">
+    <span class="domain-name">ailzo.com</span>
+    <p class="domain-desc">
+      Brandable • Short • Global • Perfect for AI & Tech
+    </p>
+  </div>
+
+  <div class="countdown">
+    <div><span id="d">00</span><small>Days</small></div>
+    <div><span id="h">00</span><small>Hours</small></div>
+    <div><span id="m">00</span><small>Minutes</small></div>
+    <div><span id="s">00</span><small>Seconds</small></div>
+  </div>
+
+  <a href="mailto:info@ailzo.com" class="buy-btn">
+    Contact to Buy
+  </a>
+</section>
 </header>
 
 <script>
@@ -840,6 +937,27 @@ robotBtn.onclick=()=>{
   i=(i+1)%msgs.length;
 };
 </script>
+<script>
+const targetDate = new Date("2026-01-01T00:00:00").getTime();
 
+setInterval(()=>{
+  const now = new Date().getTime();
+  const diff = targetDate - now;
+
+  if(diff < 0) return;
+
+  document.getElementById("d").innerText =
+    Math.floor(diff / (1000*60*60*24));
+
+  document.getElementById("h").innerText =
+    Math.floor((diff / (1000*60*60)) % 24);
+
+  document.getElementById("m").innerText =
+    Math.floor((diff / (1000*60)) % 60);
+
+  document.getElementById("s").innerText =
+    Math.floor((diff / 1000) % 60);
+},1000);
+</script>
 </body>
 </html>
