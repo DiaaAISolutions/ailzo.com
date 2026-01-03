@@ -2,109 +2,144 @@
 <html lang="ar" dir="rtl">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
-<title>AiLzo Ai Pro</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AiLzo AI Pro – Global AI Platform</title>
+
+<link rel="icon" href="logo.png">
 
 <style>
+/* ================= GLOBAL AI SYSTEM ================= */
+:root{
+  --bg-main:#05070d;
+  --bg-soft:#0b1020;
+  --ai-blue:#00e5ff;
+  --ai-purple:#7a5cff;
+  --ai-orange:#ff9f43;
+  --text-main:#ffffff;
+  --text-soft:rgba(255,255,255,.75);
+  --glass:rgba(255,255,255,.06);
+  --border:rgba(255,255,255,.12);
+  --glow:0 0 40px rgba(0,229,255,.35);
+}
+
 *{box-sizing:border-box;margin:0;padding:0}
 html,body{
   width:100%;
-  overflow-x:hidden;
-  background:#050c14;
-  color:#fff;
+  background:radial-gradient(circle at top,#0b1020,#05070d 60%);
+  color:var(--text-main);
   font-family:system-ui,-apple-system,BlinkMacSystemFont;
+  overflow-x:hidden;
 }
 
-/* HERO */
+/* ================= HERO ================= */
 #hero{
-  min-height:100svh;
+  min-height:100vh;
   display:flex;
   flex-direction:column;
+  position:relative;
 }
 
 /* TOP BAR */
 .top-bar{
-  height:46px;
+  height:50px;
   display:flex;
   align-items:center;
   justify-content:center;
-  background:rgba(10,20,40,.55);
-  backdrop-filter:blur(10px);
-}
-.brand{
-  color:#00d9ff;
-  font-size:14px;
-  animation:brandMove 6s ease-in-out infinite alternate;
-}
-@keyframes brandMove{
-  from{transform:translateX(-28px)}
-  to{transform:translateX(28px)}
+  background:rgba(0,0,0,.35);
+  backdrop-filter:blur(12px);
+  border-bottom:1px solid var(--border);
 }
 
-/* CONTENT */
+.brand{
+  font-size:14px;
+  letter-spacing:1px;
+  color:var(--ai-blue);
+  animation:brandMove 6s ease-in-out infinite alternate;
+}
+
+@keyframes brandMove{
+  from{transform:translateX(-30px)}
+  to{transform:translateX(30px)}
+}
+
+/* HERO CONTENT */
 .hero-content{
   flex:1;
   display:flex;
   flex-direction:column;
   align-items:center;
-  gap:10px;
-  padding:14px 10px;
+  text-align:center;
+  padding:40px 14px;
+  gap:16px;
   position:relative;
 }
 
 /* COUNTERS */
 .hero-counters{
   display:flex;
-  gap:18px;
+  gap:24px;
+  margin-top:10px;
 }
 .hero-counters strong{
-  display:block;
-  font-size:13px;
-  color:#00d9ff;
+  font-size:16px;
+  color:var(--ai-blue);
 }
 .hero-counters span{
-  font-size:10px;
+  display:block;
+  font-size:11px;
   opacity:.8;
 }
 
-/* ROBOT */
-.robot-wrap{
-  width:90px;
+/* AI CORE */
+.ai-core{
+  width:130px;
+  height:130px;
+  border-radius:50%;
+  background:radial-gradient(circle at 30% 30%, #7ff, var(--ai-blue) 40%, #021 70%);
+  box-shadow:var(--glow);
   animation:float 4s ease-in-out infinite;
+  position:relative;
 }
 @keyframes float{
   0%,100%{transform:translateY(0)}
-  50%{transform:translateY(-6px)}
+  50%{transform:translateY(-14px)}
 }
 
-/* TEXT */
+/* TITLE */
 .hero-title{
-  font-size:15px;
-  color:#00d9ff;
+  font-size:20px;
+  font-weight:700;
+}
+.hero-title span{
+  color:var(--ai-blue);
 }
 .hero-sub{
-  font-size:11px;
-  color:#ff9f43;
+  font-size:13px;
+  color:var(--ai-orange);
 }
 
-/* FEATURES */
-.hero-features{
+/* AI TAGS */
+.hero-tags{
   display:flex;
   gap:10px;
+  flex-wrap:wrap;
+  justify-content:center;
 }
-.feature{
-  padding:6px 10px;
-  border-radius:12px;
-  background:rgba(0,217,255,.08);
-  border:1px solid rgba(0,217,255,.2);
-  font-size:10px;
+.tag{
+  padding:6px 14px;
+  border-radius:18px;
+  font-size:11px;
+  background:var(--glass);
+  border:1px solid var(--border);
+  backdrop-filter:blur(8px);
 }
 
-/* TECH LINE */
+/* DIVIDER */
 .tech-line{
-  width:80%;
+  width:85%;
   height:2px;
-  background:linear-gradient(90deg,#00d9ff,#ff9f43,#00d9ff);
+  margin-top:20px;
+  background:linear-gradient(90deg,var(--ai-blue),var(--ai-purple),var(--ai-blue));
   background-size:200% 100%;
   animation:flow 3s linear infinite;
 }
@@ -113,79 +148,38 @@ html,body{
   to{background-position:200%}
 }
 
-/* YEAR */
-.year-wrap{
-  position:absolute;
-  bottom:120px;
-  direction:ltr;
-  font-size:22px;
-  font-weight:700;
-  color:#00d9ff;
-  display:flex;
-  align-items:flex-end;
-}
-.year-5{opacity:0}
-
-/* DOMAIN SALE */
-.domain-sale{
-  margin:40px auto 0;
-  text-align:center;
-  max-width:520px;
-}
-.domain-sale h2{
-  font-size:22px;
-  color:#00d9ff;
-  margin-bottom:15px;
-}
-.domain-box{
-  border:1px solid rgba(0,217,255,.3);
-  padding:20px;
-  border-radius:16px;
-  background:rgba(0,0,0,.35);
-  backdrop-filter:blur(8px);
-}
-.domain-name{
-  font-size:32px;
-  font-weight:800;
-}
-.domain-desc{
-  font-size:14px;
-  opacity:.85;
-  margin-top:8px;
-}
-
-/* COUNTDOWN */
+/* ================= COUNTDOWN ================= */
 .countdown{
   display:flex;
-  justify-content:center;
   gap:12px;
-  margin:18px 0;
+  margin-top:26px;
 }
 .countdown div{
-  background:#001018;
-  border-radius:12px;
-  padding:10px 14px;
   min-width:70px;
+  padding:10px;
+  border-radius:14px;
+  background:var(--glass);
+  border:1px solid var(--border);
+  backdrop-filter:blur(10px);
 }
 .countdown span{
-  font-size:22px;
+  font-size:20px;
+  color:var(--ai-blue);
   font-weight:700;
-  color:#00d9ff;
 }
 .countdown small{
-  display:block;
-  font-size:11px;
+  font-size:10px;
   opacity:.7;
 }
-.buy-btn{
-  display:inline-block;
-  margin-top:10px;
-  padding:12px 26px;
-  border-radius:30px;
-  background:linear-gradient(135deg,#00d9ff,#00aaff);
-  color:#001018;
-  font-weight:700;
-  text-decoration:none;
+
+/* GLOW */
+.glow-bg{
+  position:absolute;
+  inset:0;
+  pointer-events:none;
+  background:
+    radial-gradient(circle at 20% 20%, rgba(0,229,255,.12), transparent 40%),
+    radial-gradient(circle at 80% 30%, rgba(122,92,255,.12), transparent 40%);
 }
 </style>
 </head>
@@ -193,63 +187,52 @@ html,body{
 <body>
 
 <header id="hero">
+  <div class="glow-bg"></div>
 
-<div class="top-bar">
-  <span class="brand">AiLzo Ai Pro</span>
-</div>
-
-<div class="hero-content">
-
-<div class="hero-counters">
-  <div><strong id="orders">0</strong><span>طلبات</span></div>
-  <div><strong id="clients">0</strong><span>عملاء</span></div>
-</div>
-
-<div class="robot-wrap">
-<svg viewBox="0 0 200 260">
-<ellipse cx="100" cy="70" rx="70" ry="55" fill="#fff"/>
-<ellipse cx="100" cy="80" rx="52" ry="38" fill="#6b8790"/>
-<circle cx="80" cy="78" r="7" fill="#00d9ff"/>
-<circle cx="120" cy="78" r="7" fill="#00d9ff"/>
-<path d="M85 95 Q100 105 115 95" stroke="#000" stroke-width="4" fill="none"/>
-<rect x="65" y="130" width="70" height="90" rx="18" fill="#fff"/>
-</svg>
-</div>
-
-<h1 class="hero-title">يرحب بك AiLzo Ai Pro</h1>
-<p class="hero-sub">ألقي نظرة على خدماتنا</p>
-
-<div class="hero-features">
-  <div class="feature">سرعة تنفيذ</div>
-  <div class="feature">أمان كامل</div>
-  <div class="feature">حلول ذكية</div>
-</div>
-
-<div class="tech-line"></div>
-
-<section class="domain-sale">
-  <h2>Premium Domain For Sale</h2>
-  <div class="domain-box">
-    <span class="domain-name">ailzo.com</span>
-    <p class="domain-desc">Brandable • Short • Global • AI Ready</p>
+  <div class="top-bar">
+    <span class="brand">AiLzo AI Pro</span>
   </div>
 
-  <div class="countdown">
-    <div><span id="d">00</span><small>Days</small></div>
-    <div><span id="h">00</span><small>Hours</small></div>
-    <div><span id="m">00</span><small>Minutes</small></div>
-    <div><span id="s">00</span><small>Seconds</small></div>
+  <div class="hero-content">
+
+    <div class="hero-counters">
+      <div><strong id="orders">0</strong><span>طلبات</span></div>
+      <div><strong id="clients">0</strong><span>عملاء</span></div>
+    </div>
+
+    <div class="ai-core"></div>
+
+    <h1 class="hero-title">
+      منصة <span>ذكاء اصطناعي</span> تبني مستقبلك الرقمي
+    </h1>
+
+    <p class="hero-sub">
+      حلول عالمية • تنفيذ فوري • أمان كامل
+    </p>
+
+    <div class="hero-tags">
+      <div class="tag">AI Automation</div>
+      <div class="tag">Cyber Security</div>
+      <div class="tag">Digital Growth</div>
+      <div class="tag">Smart Systems</div>
+    </div>
+
+    <div class="tech-line"></div>
+
+    <div class="countdown">
+      <div><span id="d">00</span><small>Days</small></div>
+      <div><span id="h">00</span><small>Hours</small></div>
+      <div><span id="m">00</span><small>Minutes</small></div>
+      <div><span id="s">00</span><small>Seconds</small></div>
+    </div>
+
   </div>
-
-  <a href="mailto:info@ailzo.com" class="buy-btn">Contact to Buy</a>
-</section>
-
-</div>
 </header>
 
 <script>
+/* COUNTERS */
 function slowCounter(id,target){
-  let el=document.getElementById(id),n=0,step=target/400;
+  let el=document.getElementById(id),n=0,step=target/500;
   let i=setInterval(()=>{
     n+=step;
     if(n>=target){
@@ -260,350 +243,455 @@ function slowCounter(id,target){
     }
   },30);
 }
-slowCounter("orders",270546);
-slowCounter("clients",28649);
+setTimeout(()=>{
+  slowCounter("orders",270546);
+  slowCounter("clients",28649);
+},800);
 
-/* COUNTDOWN: 4 Jan → 31 Jan 2026 */
-const start = new Date("2026-01-04T00:00:00").getTime();
-const end   = new Date("2026-01-31T23:59:59").getTime();
+/* COUNTDOWN */
+const startDate=new Date("2026-01-04T00:00:00").getTime();
+const endDate=new Date("2026-01-31T23:59:59").getTime();
 
 setInterval(()=>{
-  const now = new Date().getTime();
-  const diff = end - now;
-  if(diff <= 0) return;
+  const now=new Date().getTime();
+  const diff=endDate-now;
+  if(diff<0) return;
 
-  document.getElementById("d").textContent =
-    Math.floor(diff / (1000*60*60*24));
-  document.getElementById("h").textContent =
-    Math.floor((diff / (1000*60*60)) % 24);
-  document.getElementById("m").textContent =
-    Math.floor((diff / (1000*60)) % 60);
-  document.getElementById("s").textContent =
-    Math.floor((diff / 1000) % 60);
+  document.getElementById("d").innerText=Math.floor(diff/(1000*60*60*24));
+  document.getElementById("h").innerText=Math.floor((diff/(1000*60*60))%24);
+  document.getElementById("m").innerText=Math.floor((diff/(1000*60))%60);
+  document.getElementById("s").innerText=Math.floor((diff/1000)%60);
 },1000);
 </script>
-<!-- ================= SERVICES ================= -->
-<section class="services-snap">
-  <h2 class="section-title">خدماتنا</h2>
 
-  <!-- ROW 1 -->
-  <div class="snap-wrapper">
-    <div class="snap-track">
-      <div class="snap-item vip" data-title="الأمن السيبراني" data-desc="حماية متقدمة للمواقع والحسابات ضد الاختراق.">🛡️ الأمن السيبراني</div>
-      <div class="snap-item vip" data-title="الذكاء الاصطناعي" data-desc="حلول AI لأتمتة الأعمال وتحليل البيانات.">🤖 الذكاء الاصطناعي</div>
-      <div class="snap-item vip" data-title="تصميم مواقع" data-desc="مواقع سريعة ومتجاوبة بتصميم عصري.">💻 تصميم مواقع</div>
-      <div class="snap-item vip" data-title="SEO" data-desc="تحسين محركات البحث وزيادة الزيارات.">🔍 SEO</div>
+<!-- ================= PART 2 : AI SERVICES ================= -->
+<section id="services" class="ai-services">
+
+  <h2 class="section-title">
+    خدماتنا الذكية
+    <span>AI Powered Solutions</span>
+  </h2>
+
+  <!-- AI SERVICES GRID -->
+  <div class="services-grid">
+
+    <div class="service-card vip">
+      <div class="icon">🤖</div>
+      <h3>الذكاء الاصطناعي</h3>
+      <p>أنظمة AI مخصصة لأتمتة الأعمال وتحليل البيانات واتخاذ القرار الذكي.</p>
+      <span class="ai-tag">AI CORE</span>
     </div>
-  </div>
 
-  <!-- ROW 2 -->
-  <div class="snap-wrapper">
-    <div class="snap-track">
-      <div class="snap-item" data-title="إدارة فيسبوك" data-desc="زيادة التفاعل والمتابعين.">فيسبوك</div>
-      <div class="snap-item" data-title="إدارة إنستجرام" data-desc="نمو حقيقي للحسابات.">إنستجرام</div>
-      <div class="snap-item" data-title="تيك توك" data-desc="مشاهدات وتفاعل قوي.">تيك توك</div>
-      <div class="snap-item" data-title="يوتيوب" data-desc="مشتركين وساعات مشاهدة.">يوتيوب</div>
+    <div class="service-card vip">
+      <div class="icon">🛡️</div>
+      <h3>الأمن السيبراني</h3>
+      <p>حماية متقدمة للمواقع والحسابات ضد الاختراق والهجمات الرقمية.</p>
+      <span class="ai-tag">SECURITY</span>
     </div>
-  </div>
 
-  <!-- ROW 3 -->
-  <div class="snap-wrapper">
-    <div class="snap-track">
-      <div class="snap-item" data-title="تصميم لوجو" data-desc="شعار احترافي لهوية مشروعك.">تصميم لوجو</div>
-      <div class="snap-item" data-title="هوية بصرية" data-desc="بناء علامة تجارية قوية.">هوية بصرية</div>
-      <div class="snap-item" data-title="تطبيقات موبايل" data-desc="Android و iOS باحتراف.">تطبيقات موبايل</div>
-      <div class="snap-item" data-title="استشارات تقنية" data-desc="حلول رقمية ذكية.">استشارات</div>
+    <div class="service-card">
+      <div class="icon">💻</div>
+      <h3>إنشاء مواقع</h3>
+      <p>تصميم وبرمجة مواقع عالمية سريعة ومتوافقة مع جميع الأجهزة.</p>
     </div>
-  </div>
-</section>
 
-<!-- ===== SERVICES MODAL ===== -->
-<div class="cinema-overlay" id="cinemaOverlay">
-  <div class="cinema-card">
-    <h3 id="cinemaTitle"></h3>
-    <p id="cinemaDesc"></p>
-    <a id="cinemaLink" target="_blank">اطلب الخدمة</a>
-    <span class="cinema-close">✕</span>
-  </div>
-</div>
+    <div class="service-card">
+      <div class="icon">📈</div>
+      <h3>SEO & Growth</h3>
+      <p>رفع ترتيبك في Google وزيادة الترافيك الحقيقي.</p>
+    </div>
 
-<!-- ================= TESTIMONIALS ================= -->
-<section class="reviews-wrap">
-  <h2 class="section-title">آراء العملاء</h2>
+    <div class="service-card">
+      <div class="icon">📱</div>
+      <h3>السوشيال ميديا</h3>
+      <p>إدارة وتنمية حساباتك على جميع المنصات باحتراف.</p>
+    </div>
 
-  <div class="reviews-track">
-    <div class="review-card">⭐⭐⭐⭐⭐<br>خدمة ممتازة وسريعة</div>
-    <div class="review-card">⭐⭐⭐⭐⭐<br>تعامل احترافي</div>
-    <div class="review-card">⭐⭐⭐⭐⭐<br>نتائج قوية</div>
-    <div class="review-card">⭐⭐⭐⭐⭐<br>دعم فني ممتاز</div>
-    <div class="review-card">⭐⭐⭐⭐⭐<br>أنصح به بشدة</div>
+    <div class="service-card">
+      <div class="icon">🎨</div>
+      <h3>الهوية البصرية</h3>
+      <p>تصميم لوجو وهوية تعكس قوة مشروعك.</p>
+    </div>
+
   </div>
+
+  <!-- AI INTERACTION STRIP -->
+  <div class="ai-strip">
+    <div class="ai-brain"></div>
+    <p>
+      نظام ذكي يرشّح لك الخدمة المناسبة حسب احتياجك
+    </p>
+    <button id="aiSuggestBtn">ابدأ التحليل</button>
+  </div>
+
 </section>
 
 <style>
-/* ===== TITLES ===== */
+/* ================= SERVICES ================= */
+.ai-services{
+  padding:90px 16px;
+  background:linear-gradient(180deg,#05070d,#070b18);
+  text-align:center;
+}
+
 .section-title{
-  text-align:center;
-  font-size:20px;
-  color:#00d9ff;
-  margin:60px 0 24px;
+  font-size:22px;
+  margin-bottom:40px;
+}
+.section-title span{
+  display:block;
+  font-size:12px;
+  margin-top:6px;
+  color:var(--ai-blue);
+  letter-spacing:1px;
 }
 
-/* ===== SERVICES ===== */
-.services-snap{padding:0 14px}
-.snap-wrapper{
-  overflow-x:auto;
-  scroll-snap-type:x mandatory;
-  -webkit-overflow-scrolling:touch;
-  margin-bottom:16px;
+.services-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(160px,1fr));
+  gap:18px;
+  max-width:1000px;
+  margin:auto;
 }
-.snap-track{display:flex;gap:12px;padding:6px}
-.snap-item{
-  flex:0 0 auto;
-  scroll-snap-align:start;
-  padding:12px 16px;
-  border-radius:14px;
-  background:rgba(0,217,255,.08);
-  border:1px solid rgba(0,217,255,.25);
-  font-size:13px;
-  white-space:nowrap;
-  cursor:pointer;
-  transition:.25s;
-}
-.snap-item:hover{
-  transform:translateY(-4px);
-  box-shadow:0 0 20px rgba(0,217,255,.35);
-}
-.vip{font-weight:700}
-.snap-wrapper::-webkit-scrollbar{display:none}
-.snap-wrapper{scrollbar-width:none}
 
-/* ===== MODAL ===== */
-.cinema-overlay{
-  position:fixed;
-  inset:0;
-  background:rgba(0,0,0,.6);
-  backdrop-filter:blur(6px);
-  display:none;
-  align-items:center;
-  justify-content:center;
-  z-index:999;
-}
-.cinema-card{
-  background:#0b1c1f;
-  padding:26px;
+.service-card{
+  background:var(--glass);
+  border:1px solid var(--border);
   border-radius:20px;
-  max-width:320px;
-  text-align:center;
-  box-shadow:0 30px 80px rgba(0,0,0,.8);
+  padding:22px 16px;
+  position:relative;
+  transition:.4s ease;
+  backdrop-filter:blur(10px);
 }
-.cinema-card h3{margin-bottom:8px;color:#00d9ff}
-.cinema-card p{font-size:13px;opacity:.85}
-.cinema-card a{
-  display:inline-block;
-  margin-top:14px;
-  padding:10px 20px;
-  background:#00ffe0;
-  color:#000;
-  border-radius:20px;
-  text-decoration:none;
+.service-card:hover{
+  transform:translateY(-6px);
+  box-shadow:var(--glow);
 }
-.cinema-close{
+
+.service-card.vip{
+  border-color:var(--ai-blue);
+}
+
+.icon{
+  font-size:28px;
+  margin-bottom:10px;
+}
+
+.service-card h3{
+  font-size:15px;
+  margin-bottom:6px;
+}
+
+.service-card p{
+  font-size:12px;
+  color:var(--text-soft);
+  line-height:1.6;
+}
+
+.ai-tag{
   position:absolute;
-  top:14px;
-  right:18px;
-  cursor:pointer;
+  top:12px;
+  right:12px;
+  font-size:9px;
+  padding:4px 8px;
+  border-radius:12px;
+  background:linear-gradient(135deg,var(--ai-blue),var(--ai-purple));
+  color:#001018;
+  font-weight:600;
 }
 
-/* ===== REVIEWS ===== */
-.reviews-wrap{padding:0 14px}
+/* ================= AI STRIP ================= */
+.ai-strip{
+  margin:60px auto 0;
+  max-width:520px;
+  padding:30px 20px;
+  border-radius:24px;
+  background:radial-gradient(circle at top,var(--glass),rgba(0,0,0,.4));
+  border:1px solid var(--border);
+  backdrop-filter:blur(12px);
+}
+
+.ai-brain{
+  width:80px;
+  height:80px;
+  margin:0 auto 16px;
+  border-radius:50%;
+  background:radial-gradient(circle at 30% 30%,#7ff,var(--ai-blue),#022);
+  box-shadow:var(--glow);
+  animation:pulse 2.5s ease-in-out infinite;
+}
+
+@keyframes pulse{
+  0%,100%{transform:scale(1)}
+  50%{transform:scale(1.08)}
+}
+
+.ai-strip p{
+  font-size:13px;
+  opacity:.85;
+  margin-bottom:14px;
+}
+
+.ai-strip button{
+  padding:12px 26px;
+  border-radius:24px;
+  border:none;
+  background:linear-gradient(135deg,var(--ai-blue),var(--ai-purple));
+  color:#001018;
+  font-weight:700;
+  cursor:pointer;
+}
+</style>
+
+<script>
+/* AI SERVICE SUGGEST */
+const aiMsgs=[
+  "نقترح لك حلول الذكاء الاصطناعي المخصصة 🔍",
+  "الأمن السيبراني هو الأنسب لمشروعك 🛡️",
+  "نظامنا يوصي بإنشاء موقع احترافي 🌐",
+  "أفضل خيار لك هو النمو الرقمي و SEO 📈"
+];
+
+let aiIndex=0;
+document.getElementById("aiSuggestBtn").onclick=()=>{
+  alert(aiMsgs[aiIndex]);
+  aiIndex=(aiIndex+1)%aiMsgs.length;
+};
+</script>
+
+<!-- ================= PART 3 : TRUST & CONFIDENCE ================= -->
+<section id="trust" class="trust-section">
+
+  <h2 class="section-title">
+    لماذا AiLzo Ai Pro؟
+    <span>Trusted • Smart • Global</span>
+  </h2>
+
+  <!-- WHY US GRID -->
+  <div class="why-grid">
+
+    <div class="why-card">
+      <div class="why-icon">⚡</div>
+      <h3>تنفيذ فوري</h3>
+      <p>نحوّل أفكارك إلى حلول رقمية ذكية بسرعة قياسية.</p>
+    </div>
+
+    <div class="why-card">
+      <div class="why-icon">🧠</div>
+      <h3>ذكاء اصطناعي متقدم</h3>
+      <p>نستخدم AI حقيقي لتحليل وتطوير أعمالك.</p>
+    </div>
+
+    <div class="why-card">
+      <div class="why-icon">🔒</div>
+      <h3>أمان كامل</h3>
+      <p>حماية بياناتك بمعايير عالمية.</p>
+    </div>
+
+    <div class="why-card">
+      <div class="why-icon">🌍</div>
+      <h3>خدمة عالمية</h3>
+      <p>نخدم عملاء من مختلف الدول.</p>
+    </div>
+
+  </div>
+
+  <!-- AI TRUST BAR -->
+  <div class="ai-trust-bar">
+    <div class="ai-line"></div>
+    <p>نظامنا يحلل أكثر من <strong>1,000,000</strong> عملية رقمية</p>
+  </div>
+
+</section>
+
+<!-- ================= REVIEWS ================= -->
+<section class="reviews-section">
+
+  <h2 class="section-title">
+    آراء عملائنا
+    <span>Real Feedback</span>
+  </h2>
+
+  <div class="reviews-track">
+
+    <div class="review-card">
+      <div class="stars">★★★★★</div>
+      <p>خدمة سريعة واحترافية جدًا.</p>
+    </div>
+
+    <div class="review-card">
+      <div class="stars">★★★★★</div>
+      <p>أفضل منصة ذكاء اصطناعي تعاملت معها.</p>
+    </div>
+
+    <div class="review-card">
+      <div class="stars">★★★★★</div>
+      <p>نتائج حقيقية ودعم ممتاز.</p>
+    </div>
+
+    <div class="review-card">
+      <div class="stars">★★★★★</div>
+      <p>مصداقية عالية وتنفيذ دقيق.</p>
+    </div>
+
+    <div class="review-card">
+      <div class="stars">★★★★★</div>
+      <p>أنصح بها لأي مشروع جاد.</p>
+    </div>
+
+  </div>
+
+</section>
+
+<!-- ================= FAQ ================= -->
+<section class="faq-section">
+
+  <h2 class="section-title">
+    الأسئلة الشائعة
+    <span>Need Help?</span>
+  </h2>
+
+  <div class="faq-box">
+
+    <div class="faq-item">
+      <div class="faq-q">ما الذي يميزكم عن غيركم؟</div>
+      <div class="faq-a">نستخدم ذكاء اصطناعي فعلي لتحسين نتائجك.</div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-q">هل الخدمات آمنة؟</div>
+      <div class="faq-a">نعم، جميع الخدمات مؤمنة بالكامل.</div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-q">هل يوجد دعم فني؟</div>
+      <div class="faq-a">دعم فني متوفر 24/7.</div>
+    </div>
+
+  </div>
+
+</section>
+
+<style>
+/* ================= TRUST ================= */
+.trust-section{
+  padding:90px 16px;
+  background:linear-gradient(180deg,#070b18,#05070d);
+  text-align:center;
+}
+
+.why-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(180px,1fr));
+  gap:18px;
+  max-width:900px;
+  margin:40px auto;
+}
+
+.why-card{
+  background:var(--glass);
+  border:1px solid var(--border);
+  border-radius:22px;
+  padding:26px 18px;
+  transition:.4s;
+}
+.why-card:hover{
+  transform:translateY(-6px);
+  box-shadow:var(--glow);
+}
+
+.why-icon{
+  font-size:30px;
+  margin-bottom:10px;
+}
+
+.why-card h3{
+  font-size:15px;
+  margin-bottom:6px;
+}
+
+.why-card p{
+  font-size:12px;
+  color:var(--text-soft);
+}
+
+/* AI TRUST BAR */
+.ai-trust-bar{
+  max-width:500px;
+  margin:50px auto 0;
+}
+.ai-line{
+  height:3px;
+  background:linear-gradient(90deg,var(--ai-blue),var(--ai-purple),var(--ai-blue));
+  animation:flow 3s linear infinite;
+  background-size:200% 100%;
+  border-radius:4px;
+}
+.ai-trust-bar p{
+  margin-top:12px;
+  font-size:13px;
+  opacity:.85;
+}
+
+/* ================= REVIEWS ================= */
+.reviews-section{
+  padding:90px 16px;
+  background:#05070d;
+  text-align:center;
+}
+
 .reviews-track{
   display:flex;
-  gap:14px;
+  gap:16px;
   overflow-x:auto;
   scroll-snap-type:x mandatory;
+  padding:20px 0;
 }
 .review-card{
   flex:0 0 220px;
   scroll-snap-align:start;
-  background:rgba(255,255,255,.05);
-  padding:14px;
-  border-radius:14px;
+  background:var(--glass);
+  border:1px solid var(--border);
+  border-radius:18px;
+  padding:18px;
   font-size:12px;
+}
+.stars{
+  color:#ffd700;
+  margin-bottom:6px;
+}
+
+/* ================= FAQ ================= */
+.faq-section{
+  padding:90px 16px;
+  background:linear-gradient(180deg,#05070d,#040912);
   text-align:center;
 }
-.reviews-track::-webkit-scrollbar{display:none}
-</style>
-
-<script>
-/* SERVICES MODAL */
-const overlay=document.getElementById("cinemaOverlay");
-document.querySelectorAll(".snap-item").forEach(item=>{
-  item.onclick=()=>{
-    document.getElementById("cinemaTitle").textContent=item.dataset.title;
-    document.getElementById("cinemaDesc").textContent=item.dataset.desc;
-    document.getElementById("cinemaLink").href=
-      "https://wa.me/201021292994?text="+
-      encodeURIComponent("أريد خدمة: "+item.dataset.title);
-    overlay.style.display="flex";
-  }
-});
-document.querySelector(".cinema-close").onclick=()=>overlay.style.display="none";
-overlay.onclick=e=>{if(e.target===overlay)overlay.style.display="none"};
-</script>
-<!-- ================= WHY AILZO ================= -->
-<section class="why-wrap">
-  <h2 class="section-title">لماذا AiLzo Ai Pro؟</h2>
-
-  <div class="why-grid">
-    <div class="why-item">
-      <div class="why-title">جودة مضمونة</div>
-      <div class="why-desc">نلتزم بأعلى معايير الجودة في جميع الخدمات.</div>
-    </div>
-
-    <div class="why-item">
-      <div class="why-title">تنفيذ سريع</div>
-      <div class="why-desc">تسليم المشاريع في وقت قياسي بدون التأثير على الجودة.</div>
-    </div>
-
-    <div class="why-item">
-      <div class="why-title">حلول ذكية</div>
-      <div class="why-desc">نستخدم أحدث تقنيات الذكاء الاصطناعي.</div>
-    </div>
-
-    <div class="why-item">
-      <div class="why-title">دعم فني دائم</div>
-      <div class="why-desc">دعم فني 24/7 لمتابعة كل طلباتك.</div>
-    </div>
-
-    <div class="why-item">
-      <div class="why-title">أمان كامل</div>
-      <div class="why-desc">حماية كاملة للبيانات والمشاريع.</div>
-    </div>
-
-    <div class="why-item">
-      <div class="why-title">أسعار مرنة</div>
-      <div class="why-desc">باقات متنوعة تناسب الأفراد والشركات.</div>
-    </div>
-  </div>
-</section>
-
-<!-- ================= FAQ ================= -->
-<section class="faq-wrap">
-  <h2 class="section-title">الأسئلة الشائعة</h2>
-
-  <div class="faq-item">
-    <div class="faq-q">ما هي الخدمات التي تقدمونها؟</div>
-    <div class="faq-a">أكثر من 30 خدمة تشمل الذكاء الاصطناعي، البرمجة، التسويق، والأمن السيبراني.</div>
-  </div>
-
-  <div class="faq-item">
-    <div class="faq-q">هل الخدمات مناسبة للشركات؟</div>
-    <div class="faq-a">نعم، نقدم حلول مخصصة للأفراد والشركات.</div>
-  </div>
-
-  <div class="faq-item">
-    <div class="faq-q">كم مدة التنفيذ؟</div>
-    <div class="faq-a">من 3 إلى 7 أيام حسب نوع الخدمة.</div>
-  </div>
-
-  <div class="faq-item">
-    <div class="faq-q">هل يوجد دعم فني؟</div>
-    <div class="faq-a">دعم فني متواصل 24/7.</div>
-  </div>
-
-  <div class="faq-item">
-    <div class="faq-q">كيف أتواصل معكم؟</div>
-    <div class="faq-a">يمكنك التواصل عبر واتساب أو فيسبوك مباشرة.</div>
-  </div>
-</section>
-
-<!-- ================= ABOUT DIAA ================= -->
-<section class="about-wrap">
-  <h2 class="section-title">من هو ضياء محسن؟</h2>
-
-  <div class="about-card">
-    <p>
-      ضياء محسن مبرمج ومتخصص في الذكاء الاصطناعي والتحول الرقمي،  
-      يعمل على تحويل الأفكار إلى حلول تقنية ذكية تساعد الأفراد  
-      والشركات على النمو والتميّز في العالم الرقمي.
-    </p>
-  </div>
-</section>
-
-<style>
-/* ===== WHY ===== */
-.why-wrap{padding:0 14px}
-.why-grid{
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(150px,1fr));
-  gap:14px;
+.faq-box{
+  max-width:620px;
+  margin:40px auto 0;
 }
-.why-item{
-  background:rgba(0,217,255,.06);
-  border:1px solid rgba(0,217,255,.25);
-  border-radius:16px;
-  padding:14px;
-  cursor:pointer;
-  transition:.3s;
-}
-.why-item:hover{transform:translateY(-4px)}
-.why-title{
-  color:#00d9ff;
-  font-size:14px;
-  font-weight:600;
-}
-.why-desc{
-  display:none;
-  font-size:13px;
-  opacity:.85;
-  margin-top:8px;
-}
-.why-item.active .why-desc{display:block}
-
-/* ===== FAQ ===== */
-.faq-wrap{padding:0 14px}
 .faq-item{
-  background:rgba(255,255,255,.05);
-  border-radius:14px;
-  margin-bottom:10px;
+  background:var(--glass);
+  border:1px solid var(--border);
+  border-radius:18px;
+  margin-bottom:12px;
+  overflow:hidden;
 }
 .faq-q{
-  padding:14px;
+  padding:16px;
   cursor:pointer;
-  font-size:14px;
+  font-weight:600;
 }
 .faq-a{
   display:none;
-  padding:14px;
+  padding:16px;
   font-size:13px;
   opacity:.85;
-}
-
-/* ===== ABOUT ===== */
-.about-wrap{padding:0 14px}
-.about-card{
-  background:rgba(0,217,255,.06);
-  border:1px solid rgba(0,217,255,.25);
-  border-radius:18px;
-  padding:18px;
-  font-size:14px;
-  line-height:1.7;
-  opacity:.9;
 }
 </style>
 
 <script>
-/* WHY TOGGLE */
-document.querySelectorAll(".why-item").forEach(item=>{
-  item.onclick=()=>{
-    document.querySelectorAll(".why-item").forEach(i=>{
-      if(i!==item) i.classList.remove("active");
-    });
-    item.classList.toggle("active");
-  }
-});
-
 /* FAQ TOGGLE */
 document.querySelectorAll(".faq-q").forEach(q=>{
   q.onclick=()=>{
@@ -614,178 +702,239 @@ document.querySelectorAll(".faq-q").forEach(q=>{
   }
 });
 </script>
-<!-- ================= FINAL SECTION ================= -->
-<section class="final-wrap">
 
-  <!-- FINAL MESSAGE -->
-  <div class="final-hero reveal">
+<!-- ================= PART 4 : GLOBAL AI FINAL ================= -->
+<section id="final-ai" class="final-ai">
+
+  <!-- ===== LUXURY DOMAIN SALE ===== -->
+  <div class="lux-domain">
+
+    <span class="lux-badge">PREMIUM DOMAIN</span>
+
     <h2>
-      نحن لا نقدّم <span class="hl">خدمات</span><br>
-      نحن نبني <span class="hl">مستقبلك الرقمي</span>
+      ailzo.com
     </h2>
-    <p>ذكاء اصطناعي • تنفيذ سريع • أمان كامل</p>
-  </div>
 
-  <!-- TRUST STRIP -->
-  <div class="trust-strip reveal delay1">
-    <div class="trust-item">AI Solutions</div>
-    <div class="trust-item">Fast Delivery</div>
-    <div class="trust-item">Global Quality</div>
-  </div>
+    <p class="lux-desc">
+      Short • Brandable • Global <br>
+      Perfect for AI, Tech & Future Startups
+    </p>
 
-  <!-- ROBOT INFO -->
-  <div class="robot-info reveal delay2">
-    <div class="robot-core-mini">
-      <div class="robot-face">
-        <span class="eye left"></span>
-        <span class="eye right"></span>
-      </div>
+    <!-- COUNTDOWN -->
+    <div class="lux-countdown">
+      <div><span id="cd-d">00</span><small>Days</small></div>
+      <div><span id="cd-h">00</span><small>Hours</small></div>
+      <div><span id="cd-m">00</span><small>Minutes</small></div>
+      <div><span id="cd-s">00</span><small>Seconds</small></div>
     </div>
 
-    <p class="robot-text" id="robotText">
-      مرحبًا 👋 أنا روبوت AiLzo، أعرّفك على الموقع
+    <a href="mailto:info@ailzo.com" class="lux-btn">
+      Contact to Buy Domain
+    </a>
+
+  </div>
+
+  <!-- ===== AI FINAL MESSAGE ===== -->
+  <div class="ai-finale-text">
+    <h3>
+      نحن لا نبيع خدمات<br>
+      <span>نحن نصنع المستقبل الرقمي</span>
+    </h3>
+    <p>
+      Artificial Intelligence • Automation • Trust
     </p>
   </div>
 
-  <!-- FINAL CTA -->
-  <div class="final-cta reveal delay3">
-    <a href="https://wa.me/201021292994" target="_blank">
-      ابدأ رحلتك الرقمية الآن
-    </a>
+  <!-- ===== AI ROBOT FINAL ===== -->
+  <div class="ai-robot-final">
+    <div class="ai-core">
+      <span class="pulse"></span>
+    </div>
+    <p class="ai-robot-text">
+      AI Engine Online
+    </p>
   </div>
 
 </section>
 
+<!-- ================= FOOTER ================= -->
+<footer class="global-footer">
+  <p>
+    © 2026 AiLzo Ai Pro — All Rights Reserved
+  </p>
+  <p class="footer-sub">
+    Powered by Artificial Intelligence
+  </p>
+</footer>
+
+<!-- ================= PART 4 STYLES ================= -->
 <style>
-/* ===== FINAL WRAP ===== */
-.final-wrap{
-  padding:70px 16px 90px;
-  background:linear-gradient(180deg,#050c14,#040912);
+.final-ai{
+  padding:100px 16px 80px;
+  background:
+    radial-gradient(circle at top,#0b1224,#05070d 60%);
   text-align:center;
 }
-.hl{color:#00d9ff}
 
-.final-hero h2{
-  font-size:22px;
-  line-height:1.5;
-}
-.final-hero p{
-  font-size:13px;
-  opacity:.8;
-  margin-top:6px;
-}
-
-/* TRUST STRIP */
-.trust-strip{
-  display:flex;
-  justify-content:center;
-  gap:10px;
-  margin:26px 0;
-  flex-wrap:wrap;
-}
-.trust-item{
-  padding:8px 14px;
-  font-size:11px;
-  border-radius:14px;
+/* DOMAIN */
+.lux-domain{
+  max-width:560px;
+  margin:0 auto 80px;
+  background:rgba(255,255,255,.04);
   border:1px solid rgba(0,217,255,.25);
-  background:rgba(0,217,255,.08);
+  border-radius:30px;
+  padding:42px 22px;
+  box-shadow:0 0 60px rgba(0,217,255,.15);
 }
 
-/* ROBOT MINI */
-.robot-info{
-  margin:30px auto 10px;
-  display:flex;
-  flex-direction:column;
-  align-items:center;
-  gap:14px;
+.lux-badge{
+  display:inline-block;
+  padding:6px 14px;
+  font-size:11px;
+  border-radius:20px;
+  background:linear-gradient(135deg,#00d9ff,#7f5cff);
+  color:#001018;
+  font-weight:700;
 }
-.robot-core-mini{
-  width:90px;
-  height:90px;
-  border-radius:50%;
-  background:radial-gradient(circle at 30% 30%, #7ff, #0bb 40%, #022 70%);
-  box-shadow:0 0 30px rgba(0,217,255,.6);
-  position:relative;
-  animation:floatMini 4s ease-in-out infinite;
+
+.lux-domain h2{
+  font-size:38px;
+  margin:18px 0 10px;
+  letter-spacing:1px;
+  color:#fff;
 }
-@keyframes floatMini{
-  0%,100%{transform:translateY(0)}
-  50%{transform:translateY(-10px)}
+
+.lux-desc{
+  font-size:14px;
+  opacity:.85;
+  line-height:1.6;
 }
-.robot-face{
-  position:absolute;
-  inset:0;
+
+/* COUNTDOWN */
+.lux-countdown{
   display:flex;
   justify-content:center;
-  align-items:center;
-  gap:18px;
+  gap:14px;
+  margin:26px 0;
 }
-.eye{
-  width:10px;
-  height:16px;
-  background:#000;
-  border-radius:50%;
-  position:relative;
+.lux-countdown div{
+  background:#001018;
+  border-radius:16px;
+  padding:12px 16px;
+  min-width:70px;
 }
-.eye::after{
-  content:"";
-  position:absolute;
-  inset:3px;
-  background:#0ff;
-  border-radius:50%;
+.lux-countdown span{
+  font-size:22px;
+  font-weight:700;
+  color:#00d9ff;
 }
-
-/* ROBOT TEXT */
-.robot-text{
-  font-size:13px;
-  opacity:.85;
-  min-height:18px;
+.lux-countdown small{
+  display:block;
+  font-size:11px;
+  opacity:.7;
 }
 
-/* CTA */
-.final-cta{
-  margin-top:30px;
-}
-.final-cta a{
+.lux-btn{
   display:inline-block;
-  padding:14px 26px;
-  border-radius:22px;
+  margin-top:12px;
+  padding:14px 32px;
+  border-radius:30px;
   background:linear-gradient(135deg,#00d9ff,#00aaff);
   color:#001018;
   font-weight:700;
   text-decoration:none;
-  transition:.3s;
+  transition:.35s;
 }
-.final-cta a:hover{
-  transform:scale(1.05);
+.lux-btn:hover{
+  transform:scale(1.06);
 }
 
-/* REVEAL */
-.reveal{opacity:0;transform:translateY(24px);transition:.6s}
-.reveal.show{opacity:1;transform:none}
-.delay1{transition-delay:.1s}
-.delay2{transition-delay:.2s}
-.delay3{transition-delay:.3s}
+/* FINAL TEXT */
+.ai-finale-text h3{
+  font-size:22px;
+  line-height:1.5;
+}
+.ai-finale-text span{
+  color:#00d9ff;
+}
+.ai-finale-text p{
+  font-size:13px;
+  opacity:.75;
+  margin-top:6px;
+}
+
+/* AI ROBOT */
+.ai-robot-final{
+  margin-top:50px;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  gap:10px;
+}
+.ai-core{
+  width:90px;
+  height:90px;
+  border-radius:50%;
+  background:radial-gradient(circle,#00d9ff,#004);
+  box-shadow:0 0 40px rgba(0,217,255,.8);
+  position:relative;
+  animation:float 4s ease-in-out infinite;
+}
+.pulse{
+  position:absolute;
+  inset:0;
+  border-radius:50%;
+  border:2px solid rgba(0,217,255,.5);
+  animation:pulse 2s infinite;
+}
+
+.ai-robot-text{
+  font-size:12px;
+  opacity:.75;
+}
+
+/* FOOTER */
+.global-footer{
+  padding:28px 10px;
+  text-align:center;
+  background:#02040a;
+  font-size:12px;
+  opacity:.7;
+}
+.footer-sub{
+  font-size:11px;
+  opacity:.5;
+}
+
+@keyframes float{
+  0%,100%{transform:translateY(0)}
+  50%{transform:translateY(-10px)}
+}
+@keyframes pulse{
+  0%{transform:scale(.9);opacity:.8}
+  100%{transform:scale(1.5);opacity:0}
+}
 </style>
 
+<!-- ================= COUNTDOWN SCRIPT ================= -->
 <script>
-/* REVEAL */
-const rev=document.querySelectorAll(".reveal");
-const io=new IntersectionObserver(e=>{
-  e.forEach(x=>x.isIntersecting&&x.target.classList.add("show"))
-},{threshold:.15});
-rev.forEach(r=>io.observe(r));
+const endDate = new Date("2026-01-31T23:59:59").getTime();
 
-/* ROBOT TEXT ROTATE */
-const robotText=document.getElementById("robotText");
-const robotMsgs=[
-  "أقدّم لك حلول ذكاء اصطناعي متقدمة",
-  "خدمات تقنية بمعايير عالمية",
-  "جاهز تبدأ مشروعك الآن؟"
-];
-let r=0;
 setInterval(()=>{
-  robotText.textContent=robotMsgs[r];
-  r=(r+1)%robotMsgs.length;
-},3500);
+  const now = new Date().getTime();
+  const diff = endDate - now;
+  if(diff <= 0) return;
+
+  document.getElementById("cd-d").innerText =
+    Math.floor(diff / (1000*60*60*24));
+
+  document.getElementById("cd-h").innerText =
+    Math.floor((diff / (1000*60*60)) % 24);
+
+  document.getElementById("cd-m").innerText =
+    Math.floor((diff / (1000*60)) % 60);
+
+  document.getElementById("cd-s").innerText =
+    Math.floor((diff / 1000) % 60);
+},1000);
 </script>
