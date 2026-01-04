@@ -920,15 +920,16 @@ document.querySelectorAll(".faq-q").forEach(q=>{
 <script>
 const endDate = new Date("2026-01-31T23:59:59").getTime();
 
-setInterval(()=>{
+setInterval(() => {
   const now = new Date().getTime();
   const diff = endDate - now;
-  if(diff <= 0) return;
+
+  if (diff <= 0) return;
 
   document.getElementById("cd-d").innerText =
     Math.floor(diff / (1000*60*60*24));
 
-  document.getElementById("cd-h").innerText =
+  document.getElementByIdById("cd-h").innerText =
     Math.floor((diff / (1000*60*60)) % 24);
 
   document.getElementById("cd-m").innerText =
@@ -936,5 +937,5 @@ setInterval(()=>{
 
   document.getElementById("cd-s").innerText =
     Math.floor((diff / 1000) % 60);
-},1000);
+}, 1000);
 </script>
